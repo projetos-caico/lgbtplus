@@ -5,7 +5,7 @@
 @endsection
 
 @section('formulario')
-<form class="login100-form validate-form" method="POST" action="{{ route('auth.store') }}">
+<form class="login100-form validate-form" method="POST" action="{{url('/register')}}">
 	@csrf
 	<span class="login100-form-title p-b-49">
         Cadastre-se
