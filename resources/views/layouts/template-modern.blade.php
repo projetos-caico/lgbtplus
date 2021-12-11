@@ -25,7 +25,7 @@
                             <li class="nav-item"><a class="nav-link" href="{{route('welcome')}}">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{route('about')}}">Sobre</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contato</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{route('login')}}">@yield('login')</a></li>
                             {{-- <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                             <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
                             <li class="nav-item dropdown">
@@ -118,7 +118,7 @@
                     </div>
                 </div>
             </div>  --}}
-            
+            @yield('main')
             @yield('news-section')
             <!-- News section-->
             {{-- <section class="py-5">

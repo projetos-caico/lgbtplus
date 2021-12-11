@@ -4,6 +4,10 @@
     Página inicial
 @endsection
 
+@section('login')
+    Login
+@endsection
+
 @section('header')
 <header class=" bg-light-purple">
     <div class="container px-5">

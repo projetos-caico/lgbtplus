@@ -25,9 +25,9 @@ Route::get('/contato', function () {
     return view('dashboard.contact');
 })->name('contact');
 
-Route::get('/teste', function () {
-    return view('layouts.template-modern');
-});
+Route::get('/perfil', function () {
+    return view('dashboard.profile');
+})->name('perfil');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
