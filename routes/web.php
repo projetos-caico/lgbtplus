@@ -15,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('welcome');
+
+Route::get('/sobre', function () {
+    return view('dashboard.about');
+})->name('about');
+
+Route::get('/contato', function () {
+    return view('dashboard.contact');
+})->name('contact');
+
+Route::get('/teste', function () {
+    return view('layouts.template-modern');
 });
 
 Route::get('/dashboard', function () {
