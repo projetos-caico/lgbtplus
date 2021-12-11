@@ -4,7 +4,11 @@
     Página inicial
 @endsection
 
-@section('login')
+@section('menu-item1')
+    Notícias
+@endsection
+
+@section('menu-item2')
     Login
 @endsection
 

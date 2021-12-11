@@ -1,6 +1,7 @@
 <?php
+use Illuminate\Http\Request;
+use App\Http\Controllers\AuthController;
 
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,12 @@ Route::get('/contato', function () {
 
 Route::get('/perfil', function () {
     return view('dashboard.profile');
-})->name('perfil');
+})->name('perfil')->middleware(['auth']);
+
+Route::resource('auth', AuthController::class);
+
+Route::resource('news', NewsController::class);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
