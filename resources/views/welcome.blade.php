@@ -1,5 +1,9 @@
 @extends('layouts.template-modern')
 
+@section('title-page')
+    Página inicial
+@endsection
+
 @section('header')
 <header class=" bg-light-purple">
     <div class="container px-5">
