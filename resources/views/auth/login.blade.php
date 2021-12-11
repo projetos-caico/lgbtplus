@@ -5,7 +5,7 @@
 @endsection
 
 @section('formulario')
-<form class="login100-form validate-form" method="POST" action="{{url('/login') }}"">
+<form class="login100-form validate-form" method="POST" action="{{url('/login') }}">
 	@csrf
 	<span class="login100-form-title p-b-49">
 		Login
@@ -32,8 +32,8 @@
 	<div class="container-login100-form-btn">
 		<div class="wrap-login100-form-btn">
 			<div class="login100-form-bgbtn"></div>
-			<button class="login100-form-btn">
-				<a class="login100-forn-btn" href="{{route('perfil')}}" style="text-decoration: none"> Entrar</a>
+			{{-- se nao funcionar colocar o A --}}
+			<button class="login100-form-btn" type="submit">Entrar
 			</button>
 		</div>
 	</div>

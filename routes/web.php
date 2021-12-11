@@ -30,8 +30,6 @@ Route::get('/perfil', function () {
     return view('dashboard.profile');
 })->name('perfil')->middleware(['auth']);
 
-Route::resource('auth', AuthController::class);
-
 Route::resource('news', NewsController::class);
 
 
