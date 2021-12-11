@@ -38,8 +38,7 @@
     <div class="container-login100-form-btn p-t-30">
         <div class="wrap-login100-form-btn">
             <div class="login100-form-bgbtn"></div>
-            <button class="login100-form-btn" type="submit">Entrar
-			</button>
+            <button class="login100-form-btn" type="submit">Entrar</button>
         </div>
     </div>
 </form>
