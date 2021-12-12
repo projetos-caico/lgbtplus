@@ -11,18 +11,18 @@
 		Login
 	</span>
 	
-	<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
-		<span class="label-input100">Usuário</span>
-		<input class="input100" type="text" name="username" id="username" placeholder="Insira seu usuário">
-		<span class="focus-input100" data-symbol="&#xf206;"></span>
-	</div>
-	<div class="wrap-input100 validate-input" data-validate="Password is required">
+	<div class="wrap-input100 validate-input m-b-30" data-validate = "email is reauired">
+        <span class="label-input100">Email</span>
+        <input class="input100" type="email" name="email" id="email" placeholder="Insira seu email" required>
+        <span class="focus-input100" data-symbol="&#xf206;"></span>
+    </div>
+	<div class="wrap-input100 validate-input m-b-30" data-validate="Password is required">
 		<span class="label-input100">Senha</span>
 		<input class="input100" type="password" name="password" placeholder="Insira sua senha">
 		<span class="focus-input100" data-symbol="&#xf190;"></span>
 	</div>
 	
-	<div class="text-right p-t-8 p-b-100">
+	<div class="text-right p-t-8 p-b-65">
 		{{-- aqui é onde o espaçamento do login fica -p-b-*100* --}}
 		<a href="#">
 			Esqueceu sua senha?
@@ -38,7 +38,7 @@
 		</div>
 	</div>
 	
-	<div class="flex-col-c p-t-55">
+	<div class="flex-col-c p-t-75">
 		{{-- espaçamento do cadastre-se aqui p-t-*55* --}}
 		<span class="txt1 p-b-17">
 			Não tem conta?

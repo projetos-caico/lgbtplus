@@ -15,9 +15,18 @@ Route::get('/contato', function () {
     return view('dashboard.contact');
 })->name('contact');
 
+Route::get('/cadastro', function () {
+    return view('auth.register');
+});
+
+Route::get('/entrar', function () {
+    return view('auth.login');
+});
+
 Route::get('/perfil', function () {
     return view('dashboard.profile');
-})->name('perfil')->middleware(['auth']);
+})->name('perfil');
+//->middleware(['auth']);
 
 Route::resource('news', NewsController::class);
 
