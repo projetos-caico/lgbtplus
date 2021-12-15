@@ -1,33 +1,14 @@
 <?php
-use Illuminate\Http\Request;
-use App\Http\Controllers\AuthController;
 
+Use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+    return view('site.homepage');
+})->name('site.homepage');
 
 Route::get('/sobre', function () {
-    return view('dashboard.about');
-})->name('about');
+    return view('site.about');
+})->name('site.sobre');
 
-Route::get('/contato', function () {
-    return view('dashboard.contact');
-})->name('contact');
-
-Route::get('/cadastro', function () {
-    return view('auth.register');
-});
-
-Route::get('/entrar', function () {
-    return view('auth.login');
-});
-
-Route::get('/perfil', function () {
-    return view('dashboard.profile');
-})->name('perfil');
-//->middleware(['auth']);
-
-Route::resource('news', NewsController::class);
 
 require __DIR__.'/auth.php';
