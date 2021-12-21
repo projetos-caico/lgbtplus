@@ -10,7 +10,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-10 col-xxl-8">
                 <div class="text-center my-5">
-                    <h1 class="fw-bolder mb-3"><strong>Projeto:</strong>
+                    <h1 class="fw-bolder mb-3"><strong>Pesquisa:</strong>
                         A realidade da População LGBT+ no meio rural nordestino
                     </h1>
                     <p class="lead fw-normal text-muted mb-4">O projeto em questão pretende realizar uma pesquisa quantitativa sobre as condições de vida da população LGBT+ que vive no meio rural da região Nordeste.</p>
