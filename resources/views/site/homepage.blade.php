@@ -14,7 +14,7 @@
                     <p class="lead fw-normal text-white mb-4">O forms abaixo tem como objetivo dar visibidilidade a comunidade LGBT+ do meio rural</p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                         <a class="btn btn-lgbt-primary btn-lg px-4 me-sm-3" href="{{url('/pesquisa')}}">Formulário</a>
-                        <a class="btn btn-outline-lgbt-light btn-lg px-4" href="#glossary">Aprenda mais</a>
+                        <a class="btn btn-outline-lgbt-light btn-lg px-4" href="#glossary">Glossário</a>
                     </div>
                 </div>
             </div>

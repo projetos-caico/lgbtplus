@@ -3265,13 +3265,13 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .dropdown-item.active, .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #4e73df
+    background-color: var(--bs-lgbt-purple);
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
     color: #b7b9cc;
     pointer-events: none;
-    background-color: transparent
+    background-color: transparent;
 }
 
 .dropdown-menu.show {
