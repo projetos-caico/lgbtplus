@@ -22,6 +22,26 @@
 }
 
 
+:root {
+	--bs-gradient: linear-gradient(360deg, rgba(255, 0, 24, 0.90), rgba(134, 0, 125, 0.80));
+	--bs-lgbt-purple: #86007D;
+  	--bs-lgbt-blue: #0000F9;
+  	--bs-lgbt-green: #008018;
+  	--bs-lgbt-yellow: #FFFF41;
+  	--bs-lgbt-orange: #FFA52C;
+  	--bs-lgbt-red: #FF0018;
+	--bs-lgbt-coral: #ff1c55;
+	--bs-lgbt-light-purple: #8f26aa;
+
+  	--bs-lgbt-purple-rgb: 134, 0, 125;
+  	--bs-lgbt-blue-rgb: 0, 0, 249;
+  	--bs-lgbt-green-rgb: 0, 128, 24;
+  	--bs-lgbt-yellow-rgb: 255, 255, 65;
+  	--bs-lgbt-orange-rgb: 255, 165, 44;
+  	--bs-lgbt-red-rgb: 255, 0, 24;
+
+  	--bs-lgbt-light-rgb: 255, 230, 253;
+}
 
 
 /*//////////////////////////////////////////////////////////////////
@@ -57,7 +77,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #a64bf4;
+  color: var(--bs-lgbt-purple);
 }
 
 /*---------------------------------------------*/
@@ -171,10 +191,7 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background-color: #941EE8;
-  /* background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; */
+  background: var(--bs-gradient);
 }
 
 .wrap-login100 {
@@ -333,14 +350,8 @@ iframe {
   z-index: -1;
   width: 300%;
   height: 100%;
-  background-color: #ffc107;
-  /* background: #a64bf4; */
-  /* background: rgb(244,4,4);
-background: linear-gradient(90deg, rgba(244,4,4,0.8253676470588236) 0%, rgba(249,111,18,0.7805497198879552) 19%, rgba(251,233,23,0.7021183473389356) 38%, rgba(221,219,20,0.7161239495798319) 46%, rgba(36,195,14,0.7217261904761905) 57%, rgba(32,109,189,0.7301295518207283) 72%, rgba(88,111,228,0.9178046218487395) 83%, rgba(91,110,229,0.8869922969187675) 85%, rgba(98,107,230,0.9094012605042017) 87%, rgba(129,94,236,0.8729866946778712) 89%, rgba(159,81,241,0.8673844537815126) 91%, rgba(159,81,241,0.8449754901960784) 91%, rgba(155,83,241,0.8449754901960784) 93%, rgba(149,85,240,0.8029586834733894) 96%, rgba(159,81,241,0.850577731092437) 100%, rgba(69,121,230,0.8729866946778712) 100%, rgba(155,50,203,1) 100%, rgba(184,54,219,1) 100%, rgba(175,116,193,1) 100%, rgba(252,176,69,1) 100%); */
-  /* background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -o-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff); */
+  background-color: var(--bs-lgbt-purple);
+  
   top: 0;
   left: -100%;
 
@@ -348,6 +359,11 @@ background: linear-gradient(90deg, rgba(244,4,4,0.8253676470588236) 0%, rgba(249
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+}
+
+.login100-form-btn:hover{
+  background-color: var(--bs-lgbt-light-purple);
+  border-color: var(--bs-lgbt-light-purple);
 }
 
 .login100-form-btn {

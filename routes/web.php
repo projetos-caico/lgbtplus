@@ -14,5 +14,9 @@ Route::get('/sobre', function () {
     return view('site.about');
 })->name('site.sobre');
 
+Route::get('/perfil', function () {
+    return view('layouts.admin');
+})->name('admin')->middleware('auth');
+
 
 require __DIR__.'/auth.php';
