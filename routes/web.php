@@ -2,6 +2,11 @@
 
 Use Illuminate\Support\Facades\Route;
 
+
+Route::get('/dashboard', function(){
+    return view('dashboard.homepage');
+})->middleware(['auth']);
+
 Route::get('/', function () {
     return view('site.homepage');
 })->name('site.homepage');
