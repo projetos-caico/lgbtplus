@@ -27,5 +27,4 @@
 @section('main')
 @include('site.modal')
 @include('site.glossary')
-@include('site.partners')
 @endsection

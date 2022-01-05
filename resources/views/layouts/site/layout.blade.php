@@ -32,6 +32,7 @@
 
         {{-- falta inserir os parceiros --}}
         
+        @include('site.partners')
         @include('layouts.site.footer')
 
         <!-- Bootstrap core JS-->

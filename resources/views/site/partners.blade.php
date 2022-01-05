@@ -1,8 +1,7 @@
-<section class="py-5">
+{<section class="py-5 mt-auto">
     <div class="container px-5 my-5">
-        <aside class="rounded-3 p-4 p-sm-5 mt-5 card shadow-lgbt-1 border-0">
-            <div class="fs-3 fw-bold mb-2 text-lgbt-purple text-center">Parceiros</div>
-            <div>
+        <div class="fs- mb-2 fw-bold text-lgbt-purple">Parceiros</div>
+            <div class="images">
                 <img class="px-2 img-thumbnail" src="{{asset('images/logo-centro-sabia.png')}}" alt="Logo Centro Sabiá">
                 <img class="img-thumbnail" src="{{asset('images/logo-cetra.png')}}" alt="Logo Cetra">
             </div>
