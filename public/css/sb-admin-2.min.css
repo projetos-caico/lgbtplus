@@ -469,8 +469,8 @@ hr {
 
 .img-thumbnail {
     padding: .25rem;
-    background-color: #fff;
-    border: 1px solid #dddfeb;
+    /* background-color: #fff;
+    border: 1px solid #dddfeb; */
     border-radius: .35rem;
     max-width: 100%;
     height: auto

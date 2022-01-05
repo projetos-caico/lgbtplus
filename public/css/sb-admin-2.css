@@ -503,8 +503,8 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #fff;
-  border: 1px solid #dddfeb;
+  /* background-color: #fff;
+  border: 1px solid #dddfeb; */
   border-radius: 0.35rem;
   max-width: 100%;
   height: auto;

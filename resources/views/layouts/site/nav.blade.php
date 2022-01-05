@@ -10,7 +10,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{route('site.homepage')}}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('site.sobre')}}">Sobre</a></li>
                 @yield('logout')
-                <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Login</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#siteModal" href="#">Login</a></li>
 
             </ul>
         </div>

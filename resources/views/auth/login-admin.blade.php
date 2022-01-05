@@ -12,11 +12,11 @@
 	</span>
 	
 	<div class="wrap-input100 validate-input m-b-30" data-validate = "email is reauired">
-        <span class="label-input100">Email</span>
-        <input class="input100" type="email" name="email" id="email" placeholder="Insira seu email" required>
+        <span class="label-input100">Número de cadastro</span>
+        <input class="input100" type="text" name="adminNumber" id="adminNumber" placeholder="Insira seu nº de cadastro" required>
         <span class="focus-input100" data-symbol="&#xf206;"></span>
-		@error('email')
-			<span class="alert alert-danger">{{$errors->first('email')}}</span>
+		@error('adminNumber')
+			<span class="alert alert-danger">{{$errors->first('adminNumber')}}</span>
 		@enderror
     </div>
 	<div class="wrap-input100 validate-input m-b-30" data-validate="Password is required">

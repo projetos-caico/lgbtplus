@@ -18,5 +18,8 @@ Route::get('/perfil', function () {
     return view('layouts.admin');
 })->name('admin')->middleware('auth');
 
+Route::get('/loginAdmin', function () {
+    return view('auth.login-admin');
+})->name('login-admin');
 
 require __DIR__.'/auth.php';

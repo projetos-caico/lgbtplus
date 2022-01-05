@@ -15,6 +15,9 @@
         <span class="label-input100">Email</span>
         <input class="input100" type="email" name="email" id="email" placeholder="Insira seu email" required>
         <span class="focus-input100" data-symbol="&#xf206;"></span>
+        @error('email')
+			<span class="alert alert-danger">{{$errors->first('email')}}</span>
+		@enderror
     </div>
 
     <div class="wrap-input100 validate-input m-b-25">
