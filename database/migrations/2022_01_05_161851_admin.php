@@ -18,10 +18,11 @@ class Admin extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('admin_number')->unique();
+            // $table->string('admin_number')->unique()->str_random(10);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            // $random = Str::random(40);
         });
     }
 

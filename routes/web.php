@@ -22,4 +22,8 @@ Route::get('/loginAdmin', function () {
     return view('auth.login-admin');
 })->name('login-admin');
 
+Route::get('/registerAdmin', function () {
+    return view('auth.register-admin');
+})->name('register-admin');
+
 require __DIR__.'/auth.php';

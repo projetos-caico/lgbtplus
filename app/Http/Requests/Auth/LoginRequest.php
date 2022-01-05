@@ -31,13 +31,15 @@ class LoginRequest extends FormRequest
         return [
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
+            'admin_number' => ['required', 'numeric']
         ];
     }
 
     public function message(){
         return [
             'email.required' => 'O email é obrigatório',
-            'password.required' => 'A senha é obrigatória'
+            'password.required' => 'A senha é obrigatória',
+            'admin_number.required' => 'O número de cadastro é obrigatório'
         ];
     }
 

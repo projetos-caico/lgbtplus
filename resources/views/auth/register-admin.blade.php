@@ -1,19 +1,29 @@
-{{-- @extends('layouts.login-register')
+@extends('layouts.login-register')
 
 @section('page-title')
     Cadastre-se
 @endsection
 
 @section('formulario')
+<div class="wrap-login100 p-l-55 p-r-55 p-t-45 p-b-54" style="height: 650px">
 <form class="login100-form validate-form" method="POST" action="{{url('/register')}}">
 	@csrf
 	<span class="login100-form-title p-b-2">
         Cadastre-se
     </span>
     
-    <div class="wrap-input100 validate-input m-b-25" data-validate = "email is reauired">
-        <span class="label-input100">Número de cadastro</span>
+    <div class="wrap-input100 validate-input m-b-20" data-validate = "email is required">
+        <span class="label-input100">Email</span>
         <input class="input100" type="email" name="email" id="email" placeholder="Insira seu email" required>
+        <span class="focus-input100" data-symbol="&#xf206;"></span>
+		@error('email')
+			<span class="alert alert-danger">{{$errors->first('email')}}</span>
+		@enderror
+    </div>
+
+    <div class="wrap-input100 validate-input m-b-25" data-validate = "email is required">
+        <span class="label-input100">Número de cadastro</span>
+        <input class="input100" type="admin_number" name="admin_number" id="admin_number" placeholder="Nº de cadastro" required>
         <span class="focus-input100" data-symbol="&#xf206;"></span>
         @error('email')
 			<span class="alert alert-danger">{{$errors->first('email')}}</span>
@@ -47,11 +57,12 @@
         <span class="focus-input100" data-symbol="&#xf190;"></span>
     </div>
     
-    <div class="container-login100-form-btn p-t-50">
+    <div class="container-login100-form-btn p-t-15">
         <div class="wrap-login100-form-btn">
             <div class="login100-form-bgbtn"></div>
             <button class="login100-form-btn" type="submit">Entrar</button>
         </div>
     </div>
 </form>
-@endsection --}}
+</div>
+@endsection

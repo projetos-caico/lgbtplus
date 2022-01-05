@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -82,7 +82,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-gradient py-2 collapse-inner rounded">
                         {{-- <h6 class="collapse-header">Custom Utilities:</h6> --}}
-                        <a class="collapse-item" href="#">Criar novo usuário</a>
+                        <a class="collapse-item" href="#">Criar usuário</a>
                         <a class="collapse-item" href="#">Editar usuário</a>
                         <a class="collapse-item" href="#">Apagar usuário</a>
                     </div>
@@ -109,10 +109,6 @@
                         <a class="collapse-item" href="#">Caixa de entrada</a>
                         <a class="collapse-item" href="#">Novo email</a>
                         <a class="collapse-item" href="#">Lixeira</a>
-                        {{--<div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a> --}}
                     </div>
                 </div>
             </li>
@@ -139,13 +135,6 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            <!-- Sidebar Message -->
-            {{-- <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="{{asset('images/undraw_rocket.svg')}}" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div> --}}
-
         </ul>
         <!-- End of Sidebar -->
 
@@ -163,19 +152,6 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-                    {{-- <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form> --}}
                     @yield('search-bar')
                     
 

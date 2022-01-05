@@ -10,13 +10,22 @@
 	<span class="login100-form-title p-b-49">
 		Login
 	</span>
+
+    <div class="wrap-input100 validate-input m-b-30" data-validate = "email is reauired">
+        <span class="label-input100">Email</span>
+        <input class="input100" type="email" name="email" id="email" placeholder="Insira seu email" required>
+        <span class="focus-input100" data-symbol="&#xf206;"></span>
+		@error('email')
+			<span class="alert alert-danger">{{$errors->first('email')}}</span>
+		@enderror
+    </div>
 	
 	<div class="wrap-input100 validate-input m-b-30" data-validate = "email is reauired">
         <span class="label-input100">Número de cadastro</span>
-        <input class="input100" type="text" name="adminNumber" id="adminNumber" placeholder="Insira seu nº de cadastro" required>
+        <input class="input100" type="text" name="admin_number" id="admin_number" placeholder="Insira seu nº de cadastro" required>
         <span class="focus-input100" data-symbol="&#xf206;"></span>
-		@error('adminNumber')
-			<span class="alert alert-danger">{{$errors->first('adminNumber')}}</span>
+		@error('admin_number')
+			<span class="alert alert-danger">{{$errors->first('admin_number')}}</span>
 		@enderror
     </div>
 	<div class="wrap-input100 validate-input m-b-30" data-validate="Password is required">
@@ -28,7 +37,7 @@
 		@enderror
 	</div>
 	
-	<div class="text-right p-t-8 p-b-65">
+	<div class="text-right p-t-8 p-b-17">
 		{{-- aqui é onde o espaçamento do login fica -p-b-*100* --}}
 		<a href="#">
 			Esqueceu sua senha?
@@ -44,11 +53,11 @@
 		</div>
 	</div>
 	
-	<div class="flex-col-c p-t-75">
+	<div class="flex-col-c p-t-25">
 		{{-- espaçamento do cadastre-se aqui p-t-*55* --}}
-		<span class="txt1 p-b-17">
+		<span class="txt1 p-b-12">
 			Não tem conta?
-			<a href="{{route('register')}}" class="txt1">
+			<a href="{{route('register-admin')}}" class="txt1">
 				Cadastre-se aqui.
 			</a>
 		</span> 
