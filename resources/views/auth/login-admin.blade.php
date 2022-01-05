@@ -5,6 +5,7 @@
 @endsection
 
 @section('formulario')
+<div class="wrap-login100 p-l-55 p-r-55 p-t-45 p-b-54">
 <form class="login100-form validate-form" method="POST" action="{{url('/login') }}">
 	@csrf
 	<span class="login100-form-title p-b-49">
@@ -63,5 +64,5 @@
 		</span> 
 	</div>
 </form>
-
+</div>
 @endsection
