@@ -66,6 +66,7 @@
   --bs-lgbt-purple: #86007D;
   --bs-lgbt-blue: #0000F9;
   --bs-lgbt-green: #008018;
+  --bs-lgbt-light-purple: #8f26aa;
   --bs-lgbt-yellow: #FFFF41;
   --bs-lgbt-orange: #FFA52C;
   --bs-lgbt-red: #FF0018;
@@ -77,6 +78,7 @@
   --bs-lgbt-yellow-rgb: 255, 255, 65;
   --bs-lgbt-orange-rgb: 255, 165, 44;
   --bs-lgbt-red-rgb: 255, 0, 24;
+  --bs-lgbt-light-purple-rgb: 143, 38, 170;
 
   --bs-lgbt-light-rgb: 255, 230, 253;
 
@@ -3049,24 +3051,25 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color:var(--bs-lgbt-purple);
+  border-color: var(--bs-lgbt-purple);
 }
+
 .btn-primary:hover {
   color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+  background-color: var(--bs-lgbt-light-purple);
+  border-color: var(--bs-lgbt-light-purple);
 }
 
 .btn-lgbt-primary {
-  color: #fff;
-  background-color: #86007D;
-  border-color: #86007D;
+  color: rgb(255, 255, 255);
+  background-color:var(--bs-lgbt-purple);
+  border-color: var(--bs-lgbt-purple);
 }
 .btn-lgbt-primary:hover {
-  color: #000;
-  background-color: #ffccfc;
-  border-color: #ffccfc;
+  color: #fff;
+  background-color: #b154b4;
+  border-color: #b154b4;
 }
 
 .btn-check:focus + .btn-primary, .btn-primary:focus {
@@ -3089,24 +3092,24 @@ textarea.form-control-lg {
   border-color: #0d6efd;
 }
 
-.btn-secondary {
+.btn-lgbt-secondary {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: var(--bs-lgbt-light-purple);
+  border-color: var(--bs-lgbt-light-purple);
 }
-.btn-secondary:hover {
-  color: #fff;
-  background-color: #5c636a;
-  border-color: #565e64;
+.btn-lgbt-secondary:hover {
+  color: #000;
+  background-color: #ffccfc;
+  border-color: #ffccfc;
 }
 .btn-check:focus + .btn-secondary, .btn-secondary:focus {
-  color: #fff;
+  color: #000;
   background-color: #5c636a;
   border-color: #565e64;
   box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
 }
 .btn-check:checked + .btn-secondary, .btn-check:active + .btn-secondary, .btn-secondary:active, .btn-secondary.active, .show > .btn-secondary.dropdown-toggle {
-  color: #fff;
+  color: rgb(14, 13, 13);
   background-color: #565e64;
   border-color: #51585e;
 }
@@ -7914,6 +7917,11 @@ textarea.form-control-lg {
 .bg-lgbt-purple {
   --bs-bg-opacity: 0.8;
   background-color: rgba(var(--bs-lgbt-purple-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-lgbt-light-purple {
+  --bs-bg-opacity: 0.8;
+  background-color: rgba(var(--bs-lgbt-light-purple-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-lgbt-yellow {

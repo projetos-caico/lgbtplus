@@ -8,11 +8,11 @@
           </button>
         </div>
         <div class="modal-body">
-            <a href="{{route('login-admin')}}" class="btn btn-primary btn-lg btn-block"> Administrador </a>
-            <a href="{{route('login')}}" class="btn btn-secondary btn-lg btn-block"> Comum </a>
+            <a href="{{route('login-admin')}}" class="btn btn-lgbt-primary btn-lg btn-block"> Administrador </a>
+            <a href="{{route('login')}}" class="btn btn-lgbt-secondary btn-lg btn-block"> Convidado </a>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn bg-secondary text-white" data-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
