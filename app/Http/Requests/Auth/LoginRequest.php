@@ -39,7 +39,6 @@ class LoginRequest extends FormRequest
         return [
             'email.required' => 'O email é obrigatório',
             'password.required' => 'A senha é obrigatória',
-            'admin_number.required' => 'O número de cadastro é obrigatório'
         ];
     }
 
