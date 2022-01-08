@@ -1,6 +1,7 @@
 <?php
 
 Use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('site.homepage');
@@ -15,15 +16,7 @@ Route::get('/sobre', function () {
 })->name('site.sobre');
 
 Route::get('/perfil', function () {
-    return view('layouts.admin');
+    return view('layouts.site.admin');
 })->name('admin')->middleware('auth');
-
-Route::get('/loginAdmin', function () {
-    return view('auth.login-admin');
-})->name('login-admin');
-
-Route::get('/registerAdmin', function () {
-    return view('auth.register-admin');
-})->name('register-admin');
 
 require __DIR__.'/auth.php';

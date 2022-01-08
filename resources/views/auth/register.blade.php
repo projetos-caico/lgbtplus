@@ -1,4 +1,4 @@
-@extends('layouts.login-register')
+@extends('layouts.site.login-register')
 
 @section('page-title')
     Cadastre-se

@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/')}}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fab fa-pagelines"></i>
                 </div>
@@ -57,21 +57,20 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-target="#collapseTwo" data-toggle="collapse"
+                    aria-expanded="true" aria-controls="collapseTwo" aria-controls="collapseUtilities">
                     <i class="far fa-newspaper"></i>
                     <span>Notícias</span>
                 </a>
-                {{-- <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-gradient py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <a class="collapse-item" href="#">Todas as notícias</a>
+                        <a class="collapse-item" href="#">Criar notícia</a>
                     </div>
-                </div> --}}
+                </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
+            @can('admin')
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -82,13 +81,13 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-gradient py-2 collapse-inner rounded">
                         {{-- <h6 class="collapse-header">Custom Utilities:</h6> --}}
+                        <a class="collapse-item" href="#">Todos os usuários</a>
                         <a class="collapse-item" href="#">Criar usuário</a>
-                        <a class="collapse-item" href="#">Editar usuário</a>
                         <a class="collapse-item" href="#">Apagar usuário</a>
                     </div>
                 </div>
             </li>
-
+            @endcan
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -113,19 +112,20 @@
                 </div>
             </li>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Tabelas</span></a>
             </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-cogs"></i>
+                    <span>Configurações</span></a>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
