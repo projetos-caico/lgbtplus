@@ -65,14 +65,14 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 
 //LROTAS ADMIN
-Route::get('/cadastro/admin', [AdminController::class, 'register'])
+Route::get('/cadastro/admin', [AdminController::class, 'createAdmin'])
                 ->middleware('guest')
                 ->name('register-admin');
 
 Route::post('/cadastro/admin', [AdminController::class, 'storeRegister'])
                 ->middleware('guest');
 
-Route::get('/login/admin', [AdminController::class, 'login'])
+Route::get('/login/admin', [AdminController::class, 'createLogin'])
                 ->middleware('guest')
                 ->name('login-admin');
 
