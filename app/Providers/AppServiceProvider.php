@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Providers;
-
+use Illuminate\Support\Facades\Gates;
 use Illuminate\Support\ServiceProvider;
+use App\Models\User;
+use App\Models\Admin;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        
     }
 }

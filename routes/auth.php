@@ -12,18 +12,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
-                ->middleware('guest')
+                ->middleware('auth')
                 ->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('guest');
+                ->middleware('auth');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
-                ->middleware('guest')
+                ->middleware('auth')
                 ->name('login');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-                ->middleware('guest');
+                ->middleware('auth');
 
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->middleware('guest')

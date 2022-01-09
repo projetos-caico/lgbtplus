@@ -10,11 +10,15 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Admin;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+//     public function __construct()
+// {
+//     $this->middleware('auth.basic');
+// }
     public function createLogin(){
 
         return view('auth.login-admin');
@@ -59,8 +63,15 @@ class AdminController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        // $user = user::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password),
+        // ]);
 
         event(new Registered($admin));
+        // event(new Registered($user));
+        // Auth::login($admin);
 
         Auth::login($admin);
 

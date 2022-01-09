@@ -69,8 +69,7 @@
                     </div>
                 </div>
             </li>
-
-            @can('admin')
+            @can('is_admin')
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -305,7 +304,11 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->name}}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    @if (Auth::check())
+                                        {{Auth::user()->name}}
+                                    @else
+                                    @endif </span>
                                 <img class="img-profile rounded-circle"
                                     src="{{asset('images/undraw_profile.svg')}}">
                             </a>

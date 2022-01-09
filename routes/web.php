@@ -23,4 +23,5 @@ Route::get('/perfil', function () {
     return view('layouts.site.admin');
 })->name('admin')->middleware('auth');
 
+
 require __DIR__.'/auth.php';

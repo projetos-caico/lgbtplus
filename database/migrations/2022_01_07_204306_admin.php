@@ -19,7 +19,7 @@ class Admin extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('profile')->default(2);
+            $table->boolean('is_admin')->default(1);
             // $table->string('admin_number')->Str::random(10);
             $table->rememberToken();
             $table->timestamps();
