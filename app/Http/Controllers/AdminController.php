@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\AdminRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,17 +15,20 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-//     public function __construct()
-// {
-//     $this->middleware('auth.basic');
-// }
+
+    public function __construct () {
+        //$this->middleware (['auth']) ;
+    }
+
+
     public function createLogin(){
 
         return view('auth.login-admin');
 
     }
 
-    public function storeLogin(LoginRequest $request)
+    //login
+    public function storeLogin(AdminRequest $request)
     {
         $request->authenticate();
 
@@ -36,14 +39,14 @@ class AdminController extends Controller
 
     public function destroy(Request $request)
     {
-        Auth::guard('admins')->logout();
+        Auth::guard('admin')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
         return redirect('/');
-    }   //
+    }   
 
     public function createAdmin()
     {
@@ -58,21 +61,14 @@ class AdminController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults(), 'min:8', 'max:100'],
         ]);
 
-        $admin = admin::create([
+        $admin = Admin::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        // $user = user::create([
-        //     'name' => $request->name,
-        //     'email' => $request->email,
-        //     'password' => Hash::make($request->password),
-        // ]);
-
+      
         event(new Registered($admin));
-        // event(new Registered($user));
-        // Auth::login($admin);
-
+       
         Auth::login($admin);
 
         return redirect(RouteServiceProvider::HOME);

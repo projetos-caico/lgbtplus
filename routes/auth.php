@@ -12,18 +12,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
-                ->middleware('auth')
+                ->middleware('guest')
                 ->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('auth');
+                ->middleware('guest');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
-                ->middleware('auth')
+                ->middleware('guest')
                 ->name('login');
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-                ->middleware('auth');
+                ->middleware('guest');
 
 Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->middleware('guest')
@@ -79,6 +79,6 @@ Route::get('/login/admin', [AdminController::class, 'createLogin'])
 Route::post('/login/admin', [AdminController::class, 'storeLogin'])
                 ->middleware('guest');
 
-Route::post('/logout', [AdminController::class, 'destroy'])
+Route::post('/logout/admin', [AdminController::class, 'destroy'])
                 ->middleware('auth')
-                ->name('logout');
+                ->name('logout.admin');

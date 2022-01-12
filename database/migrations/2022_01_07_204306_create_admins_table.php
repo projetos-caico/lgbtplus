@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Admin extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,6 @@ class Admin extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('is_admin')->default(1);
-            // $table->string('admin_number')->Str::random(10);
             $table->rememberToken();
             $table->timestamps();
         });
