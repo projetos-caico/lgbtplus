@@ -12,7 +12,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{route('site.contato')}}">Contato</a></li>
 
                 @yield('logout')
-                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#siteModal" href="#">Dashboard</a></li>
+                {{-- <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#siteModal" href="#">Dashboard</a></li> --}}
 
             </ul>
         </div>
