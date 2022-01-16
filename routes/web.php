@@ -1,7 +1,7 @@
 <?php
 
 Use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 
 
 Route::get('/dashboard', function(){
@@ -20,9 +20,11 @@ Route::get('/sobre', function () {
     return view('site.about');
 })->name('site.sobre');
 
-Route::get('/contato', function () {
-    return view('site.contact');
-})->name('site.contato');
+Route::get('/contato', [ContactController::class, 'contact'])
+    ->name('site.contact');
+
+Route::post('/contato', [ContactController::class, 'sendMail'])
+    ->name('site.sendContact');
 
 Route::get('/perfil', function () {
     return view('layouts.site.admin');
