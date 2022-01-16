@@ -1,6 +1,7 @@
 <?php
 
 Use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 
 Route::get('/dashboard', function(){
@@ -18,6 +19,14 @@ Route::get('/pesquisa', function(){
 Route::get('/sobre', function () {
     return view('site.about');
 })->name('site.sobre');
+
+Route::get('/contato', function () {
+    return view('site.contact');
+})->name('site.contato');
+
+Route::get('/perfil', function () {
+    return view('layouts.site.admin');
+})->name('admin')->middleware('auth');
 
 
 require __DIR__.'/auth.php';

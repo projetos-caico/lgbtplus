@@ -1,10 +1,11 @@
-@extends('layouts.login-register')
+@extends('layouts.site.login-register')
 
 @section('page-title')
 	Login
 @endsection
 
 @section('formulario')
+<div class="wrap-login100 p-l-55 p-r-55 p-t-45 p-b-54">
 <form class="login100-form validate-form" method="POST" action="{{url('/login') }}">
 	@csrf
 	<span class="login100-form-title p-b-49">
@@ -15,11 +16,17 @@
         <span class="label-input100">Email</span>
         <input class="input100" type="email" name="email" id="email" placeholder="Insira seu email" required>
         <span class="focus-input100" data-symbol="&#xf206;"></span>
+		@error('email')
+			<span class="alert alert-danger">{{$errors->first('email')}}</span>
+		@enderror
     </div>
 	<div class="wrap-input100 validate-input m-b-30" data-validate="Password is required">
 		<span class="label-input100">Senha</span>
-		<input class="input100" type="password" name="password" placeholder="Insira sua senha">
+		<input class="input100" type="password" name="password" placeholder="Insira sua senha" required>
 		<span class="focus-input100" data-symbol="&#xf190;"></span>
+		@error('password')
+			<span class="alert alert-danger">{{$errors->first('password')}}</span>
+		@enderror
 	</div>
 	
 	<div class="text-right p-t-8 p-b-65">
@@ -48,5 +55,5 @@
 		</span> 
 	</div>
 </form>
-
+</div>
 @endsection

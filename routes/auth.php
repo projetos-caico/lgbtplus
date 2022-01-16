@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
@@ -62,3 +63,22 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+
+//LROTAS ADMIN
+Route::get('/cadastro/admin', [AdminController::class, 'createAdmin'])
+                ->middleware('guest')
+                ->name('register-admin');
+
+Route::post('/cadastro/admin', [AdminController::class, 'storeRegister'])
+                ->middleware('guest');
+
+Route::get('/login/admin', [AdminController::class, 'createLogin'])
+                ->middleware('guest')
+                ->name('login-admin');
+
+Route::post('/login/admin', [AdminController::class, 'storeLogin'])
+                ->middleware('guest');
+
+Route::post('/logout/admin', [AdminController::class, 'destroy'])
+                ->middleware('auth')
+                ->name('logout.admin');
