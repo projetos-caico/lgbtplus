@@ -10,51 +10,49 @@
             <div class="text-center mb-5">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
                 <h1 class="fw-bolder">Entre em contato</h1>
-                <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ut velit minima minus quis ducimus, delectus consequatur, placeat voluptatum, quisquam dolore repellat? Omnis adipisci alias hic minima quibusdam earum rem./p>
+                @if (\Session::has('success'))
+                    <span class="text-success">{{\Session::get('success')}}. Em breve, daremos retorno.</span>
+                @endif
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form id="contactForm" action="{{route('site.contact')}}" method="POST">
+                        @csrf
                         <!-- Name input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" name="name"/>
+                            <input class="form-control" id="name" type="text" placeholder="Enter your name..." name="name" value="{{old('name')}}"/>
                             <label for="name">Nome completo</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            @error('name')
+                                <div class="text-danger"><small>{{$message}}</small></div>     
+                            @enderror                            
                         </div>
                         <!-- Email address input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" name="email"/>
+                            <input class="form-control" id="email" type="email" placeholder="name@example.com" name="email" value="{{old('email')}}"/>
                             <label for="email">Email</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            @error('email')
+                                <div class="text-danger"><small>{{$message}}</small></div>    
+                            @enderror   
                         </div>
                         <!-- Phone number input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" name="phone"/>
+                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"  name="phone" value="{{old('phone')}}"/>
                             <label for="phone">Telefone</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            @error('phone')
+                                <div class="text-danger"><small>{{$message}}</small></div>      
+                            @enderror   
                         </div>
                         <!-- Message input-->
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" name="message"></textarea>
+                            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem"  name="message">
+                                {{old('message')}}
+                            </textarea>
                             <label for="message">Mensagem</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            @error('message')
+                                <div class="text-danger"><small>{{$message}}</small></div>      
+                            @enderror   
                         </div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
-                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erro ao enviar mensagem!</div></div>
-                        <!-- Submit Button-->
+                        
                         <div class="d-grid"><button class="btn btn-primary" id="submitButton" type="submit">Enviar</button></div>
                     </form>
                 </div>

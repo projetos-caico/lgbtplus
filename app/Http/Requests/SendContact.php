@@ -37,7 +37,7 @@ class SendContact extends FormRequest
             'name.required' => 'É necessário informar o nome.',
             'email.required' => 'É necessário informar o email.',
             'email.email' => 'Você não informou um email válido.',
-            'telefone.required' => 'É necessário informar o telefone.',
+            'phone.required' => 'É necessário informar o telefone.',
             'message.required' => 'É necessário ter uma mensagem.',
         ];
     }

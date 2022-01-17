@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SendContact;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Redirect;
 
 class ContactController extends Controller
 {
@@ -15,12 +16,12 @@ class ContactController extends Controller
     {
         
         $contact = Contact::factory($request->only([
-            'name','email', 'phone', 'message'
-        ]))->make();
-        
+            'name','email', 'phone', 'message']))
+            ->make();
+
         $contact->save();
 
-        return back()->with('success', 'Seu email foi enviado');
+        return Redirect::back()->with('success', 'Seu email foi enviado');
 
     }
 }
