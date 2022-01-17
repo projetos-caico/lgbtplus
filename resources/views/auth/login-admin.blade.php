@@ -9,7 +9,7 @@
 <form class="login100-form validate-form" method="POST" action="{{url('/login/admin') }}">
 	@csrf
 	<span class="login100-form-title p-b-49">
-		Login Admin
+		Login
 	</span>
 
     <div class="wrap-input100 validate-input m-b-30" data-validate = "email is reauired">
@@ -39,7 +39,7 @@
 	@enderror
 
 	
-	<div class="text-right p-t-8 p-b-17">
+	<div class="text-right p-t-8 p-b-65">
 		{{-- aqui é onde o espaçamento do login fica -p-b-*100* --}}
 		<a href="#">
 			Esqueceu sua senha?
@@ -55,14 +55,14 @@
 		</div>
 	</div>
 	
-	<div class="flex-col-c p-t-25">
+	<div class="flex-col-c p-t-75">
 		{{-- espaçamento do cadastre-se aqui p-t-*55* --}}
-		<span class="txt1 p-b-12">
+		<span class="txt1 p-b-17">
 			Não tem conta?
 			<a href="{{route('register-admin')}}" class="txt1">
 				Cadastre-se aqui.
 			</a>
-		</span>  
+		</span> 
 	</div>
 </form>
 </div>

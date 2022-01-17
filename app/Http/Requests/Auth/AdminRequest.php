@@ -30,13 +30,14 @@ class Adminrequest extends FormRequest
     {
         return [
             'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],            
+            'password' => ['required', 'string'],  
+            'name' => ['required', 'string'],          
         ];
     }
 
     public function message () {
         return [
-            'email.required' => 'O email é obrigatório',
+            'email.required' => 'O email é obrigatório', 
             'password.required' => 'A senha é obrigatória',
         ];
     }

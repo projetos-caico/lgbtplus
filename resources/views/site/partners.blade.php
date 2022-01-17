@@ -15,8 +15,8 @@
                         <button class="btn btn-outline-light" id="button-newsletter" type="button">Sign up</button>
                     </div>
                     <div class="small text-white-50">We care about privacy, and will never share your data.</div>
-                </div> --}}
-            </div>
-        </aside>
+                </div>
+            </div>--}}
+        </div>
     </div>
 </section>
