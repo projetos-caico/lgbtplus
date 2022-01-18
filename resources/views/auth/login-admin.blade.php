@@ -1,7 +1,7 @@
 @extends('layouts.site.login-register')
 
 @section('page-title')
-	Login
+	Login Admin
 @endsection
 
 @section('formulario')
@@ -21,14 +21,6 @@
 		<span class="alert alert-danger">{{$errors->first('email')}}</span>
 	@enderror
 	
-	{{-- <div class="wrap-input100 validate-input m-b-30" data-validate = "email is reauired">
-        <span class="label-input100">Número de cadastro</span>
-        <input class="input100" type="text" name="admin_number" id="admin_number" placeholder="Insira seu nº de cadastro" required>
-        <span class="focus-input100" data-symbol="&#xf206;"></span>
-		@error('admin_number')
-			<span class="alert alert-danger">{{$errors->first('admin_number')}}</span>
-		@enderror
-    </div> --}}
 	<div class="wrap-input100 validate-input m-b-30" data-validate="Password is required">
 		<span class="label-input100">Senha</span>
 		<input class="input100" type="password" name="password" placeholder="Insira sua senha" required>

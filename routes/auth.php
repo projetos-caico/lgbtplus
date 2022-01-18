@@ -80,5 +80,5 @@ Route::post('/login/admin', [AdminController::class, 'storeLogin'])
                 ->middleware('guest');
 
 Route::post('/logout/admin', [AdminController::class, 'destroy'])
-                ->middleware('auth')
+                ->middleware(['auth.admin'])
                 ->name('logout.admin');

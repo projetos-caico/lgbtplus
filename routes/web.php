@@ -3,6 +3,9 @@
 Use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 
+use Illuminate\Support\Str;
+
+
 
 Route::get('/dashboard', function(){
     return view('dashboard.homepage');
@@ -28,7 +31,20 @@ Route::post('/contato', [ContactController::class, 'sendMail'])
 
 Route::get('/perfil', function () {
     return view('layouts.site.admin');
-})->name('admin')->middleware('auth');
+})->name('admin')->middleware('auth.admin');
+
+
+Route::get('/mail', function(){
+    return view('site.mail.contact')->with([
+        'name' => 'romerito',
+        'message' => Str::words('romerito', 50, 'fd' ),
+    ]);
+});
+
+use Illuminate\Support\Facades\Auth;
+Route::get('/check', function(){
+    return Auth::check() . ' sdsds';
+});
 
 
 require __DIR__.'/auth.php';

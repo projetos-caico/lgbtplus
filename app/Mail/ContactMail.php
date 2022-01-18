@@ -28,6 +28,12 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from('lgbtrural@gmail.com')
+            ->to('romerito.campos@gmail.com')
+            ->view('site.mail.contact')
+            ->with([
+                'message' => 'message',
+                'author' => 'author',
+            ]);
     }
 }
