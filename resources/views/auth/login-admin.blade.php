@@ -10,7 +10,7 @@
 	@csrf
 	<span class="login100-form-title p-b-49">
 		Login Admin
-	</span>
+	</span>	
 
     <div class="wrap-input100 validate-input m-b-30" data-validate = "email is reauired">
         <span class="label-input100">Email</span>

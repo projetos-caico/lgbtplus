@@ -74,11 +74,11 @@ Route::post('/cadastro/admin', [AdminController::class, 'storeRegister'])
 
 Route::get('/login/admin', [AdminController::class, 'createLogin'])
                 ->middleware('guest')
-                ->name('login-admin');
+                ->name('admin.login');
 
 Route::post('/login/admin', [AdminController::class, 'storeLogin'])
                 ->middleware('guest');
 
 Route::post('/logout/admin', [AdminController::class, 'destroy'])
-                ->middleware(['auth.admin'])
-                ->name('logout.admin');
+                ->middleware(['auth:admin'])
+                ->name('admin.logout');

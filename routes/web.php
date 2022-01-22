@@ -31,7 +31,7 @@ Route::post('/contato', [ContactController::class, 'sendMail'])
 
 Route::get('/perfil', function () {
     return view('layouts.site.admin');
-})->name('admin')->middleware('auth.admin');
+})->name('admin')->middleware('auth:admin');
 
 
 Route::get('/mail', function(){
@@ -39,11 +39,6 @@ Route::get('/mail', function(){
         'name' => 'romerito',
         'message' => Str::words('romerito', 50, 'fd' ),
     ]);
-});
-
-use Illuminate\Support\Facades\Auth;
-Route::get('/check', function(){
-    return Auth::check() . ' sdsds';
 });
 
 

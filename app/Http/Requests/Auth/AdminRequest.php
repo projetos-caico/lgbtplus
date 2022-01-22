@@ -46,7 +46,7 @@ class AdminRequest extends FormRequest
 
         $this->ensureIsNotRateLimited();
         
-        if (! Auth::guard('admin')->attempt($this->only(['email', 'password']), $this->boolean('remember'))) {
+        if (! Auth::guard('admin')->attempt($this->only('email', 'password'), $this->boolean('remember'))) {
 
             RateLimiter::hit($this->throttleKey());
 
@@ -54,9 +54,6 @@ class AdminRequest extends FormRequest
                 'email' => __('auth.failed'),
             ]);
         }
-
-        var_dump(Auth::check());
-        die();
 
         RateLimiter::clear($this->throttleKey());
     }

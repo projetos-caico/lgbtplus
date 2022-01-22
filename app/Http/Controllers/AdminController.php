@@ -17,7 +17,7 @@ class AdminController extends Controller
 {
 
     public function __construct () {
-        //$this->middleware (['auth']) ;
+        
     }
 
 
@@ -30,11 +30,18 @@ class AdminController extends Controller
     //login
     public function storeLogin(AdminRequest $request)
     {
-        $request->authenticate();
+        // $request->authenticate();
 
-        $request->session()->regenerate();
+        $credentials = $request->only('email', 'password');
+        if (Auth::guard('admin')->attempt($credentials)) {            
+            $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->intended(RouteServiceProvider::ADMIN);
+        }
+
+        return redirect()->back()
+            ->withInput($request->only('email'));
+        
     }
 
     public function destroy(Request $request)

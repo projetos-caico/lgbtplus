@@ -308,7 +308,8 @@
                                     @if (Auth::check())
                                         {{Auth::user()->name}}
                                     @else
-                                    @endif </span>
+                                    @endif 
+                                </span>
                                 <img class="img-profile rounded-circle"
                                     src="{{asset('images/undraw_profile.svg')}}">
                             </a>
@@ -706,7 +707,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form id="logout" action="{{ route('logout') }}" method="POST">
+                <form id="logout" action="{{ route('admin.logout') }}" method="POST">
                     @csrf
                  </form>
                 <div class="modal-body">Selecione "sair" se você quiser encerrar a sessão.</div>
