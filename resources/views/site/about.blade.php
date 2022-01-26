@@ -68,7 +68,7 @@
                 <div class="text-center">
                     <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
                     <h5 class="fw-bolder">Romerito Campos </h5>
-                    <div class="fst-italic text-muted">Operations Manager</div>
+                    <div class="fst-italic text-muted">Doutor em Ciência da Computação</div>
                 </div>
             </div>
             <div class="col mb-5 mb-xl-0 py-3">
