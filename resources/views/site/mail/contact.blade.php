@@ -20,13 +20,17 @@
             padding: 0;
             border: 0;
         }
+        body {
+            background-color: antiquewhite;
+        }
 
         html, body, div, .fh {
             height: 100%;
         }
 
         .container {            
-            margin: 0 auto;           
+            margin: 0 auto;
+            background-color: ;           
         }
 
         div {
@@ -35,10 +39,9 @@
 
         .mail {
             display: block;
-            height: 100%;
-            margin-left: 10%;
-            margin-right: 10%;
-            margin-top: 4%
+            height: 100%;            
+            margin-top: 4%;
+            border-radius: 10%;
         }
 
         .head-mail {
@@ -46,16 +49,23 @@
             color: #000000;
             height: 20%;
             background-color: #d64dcfc0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            
         }
 
         .body-mail {
-            height: 60%;
+            min-height: 55%;
+            height: auto;
             background-color: peru;
+            
         }
 
         .footer-mail {
             height: 20%;
             background-color: royalblue;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
         }
 
         .logo {
@@ -73,6 +83,8 @@
             padding-top: 5%;
             padding-bottom: 5%;
             margin: 0;
+            text-align: justify;
+            text-justify: inter-word;
         }
 
     </style>
@@ -101,8 +113,6 @@
         </div>    
     </div>  
     
-    
-
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

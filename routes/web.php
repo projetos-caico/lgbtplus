@@ -1,15 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 Use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-
-use Illuminate\Support\Str;
 
 
 
 Route::get('/dashboard', function(){
     return view('dashboard.homepage');
-})->middleware(['auth']);
+})->middleware(['auth'])->name('user.home');
 
 Route::get('/', function () {
     return view('site.homepage');
@@ -23,23 +22,25 @@ Route::get('/sobre', function () {
     return view('site.about');
 })->name('site.sobre');
 
+Route::get('/perfil', [AdminController::class, 'profile'])
+    ->name('admin.home');
+
 Route::get('/contato', [ContactController::class, 'contact'])
     ->name('site.contact');
 
 Route::post('/contato', [ContactController::class, 'sendMail'])
     ->name('site.sendContact');
 
-Route::get('/perfil', function () {
-    return view('layouts.site.admin');
-})->name('admin')->middleware('auth:admin');
 
-
+use Faker\Factory as Faker;
 Route::get('/mail', function(){
+    $faker = Faker::create();
+
     return view('site.mail.contact')->with([
         'name' => 'romerito',
-        'message' => Str::words('romerito', 50, 'fd' ),
+        'message' => $faker->words(200, true),
     ]);
 });
 
-
 require __DIR__.'/auth.php';
+
