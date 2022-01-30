@@ -52,14 +52,14 @@
         <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-3 justify-content-center">
             <div class="col mb-5 mb-xl-0">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="{{asset('images/rafael.jpg')}}" alt="..." />
                     <h5 class="fw-bolder">Rafael Toitio </h5>
                     <div class="fst-italic text-muted">Doutor em Ciências Sociais e Professor do IFRN (Coordenador)</div>
                 </div>
             </div>
             <div class="col mb-5 mb-xl-0">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="{{asset('images/elias.jpg')}}" alt="..." />
                     <h5 class="fw-bolder">Elias Batista </h5>
                     <div class="fst-italic text-muted">Mestre em Educação Física e  Professor do IFRN</div>
                 </div>
@@ -68,26 +68,26 @@
                 <div class="text-center">
                     <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
                     <h5 class="fw-bolder">Romerito Campos </h5>
-                    <div class="fst-italic text-muted">Doutor em Ciência da Computação</div>
+                    <div class="fst-italic text-muted">Doutor em Ciência da Computação e Professor do IFRN</div>
                 </div>
             </div>
             <div class="col mb-5 mb-xl-0 py-3">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="{{asset('images/nat1.jpg')}}" alt="..." />
                     <h5 class="fw-bolder">Natália Alves </h5>
                     <div class="fst-italic text-muted">Estagiária e Estudante do curso de Informática do IFRN</div>
                 </div>
             </div>
             <div class="col mb-5 py-3">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
-                    <h5 class="fw-bolder">Adriano Barbosa Ferreira de Lima </h5>
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="{{asset('images/ferreira.jpg')}}" alt="..." />
+                    <h5 class="fw-bolder">Ferreira Lima </h5>
                     <div class="fst-italic text-muted">Técnico em Agroecologia e Estagiário do Centro Sabiá</div>
                 </div>
             </div>
             <div class="col mb-5 py-3">
                 <div class="text-center">
-                    <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="{{asset('images/gabriel.jpg')}}" alt="..." />
                     <h5 class="fw-bolder">Gabriel Campelo Barros </h5>
                     <div class="fst-italic text-muted">Mestrando em Agroecologia e Desenvolvimento Rural Sustentável (UFFS)</div>
                 </div>
