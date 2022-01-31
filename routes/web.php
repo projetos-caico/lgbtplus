@@ -20,13 +20,19 @@ Route::get('/sobre', function () {
     return view('site.about');
 })->name('site.sobre');
 
+Route::get('/dashboard/email/caixadeentrada', function () {
+    return view('contact.index');
+})->name('list.email');
+
 Route::get('/contato', [ContactController::class, 'contact'])
     ->name('site.contact');
 
 Route::post('/contato', [ContactController::class, 'sendMail'])
     ->name('site.sendContact');
 
-Route::get('/perfil', function () {
+
+
+Route::get('/dashboard', function () {
     return view('layouts.site.admin');
 })->name('admin')->middleware('auth');
 
