@@ -69,7 +69,6 @@
                     </div>
                 </div>
             </li>
-            @can('is_admin')
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -86,7 +85,6 @@
                     </div>
                 </div>
             </li>
-            @endcan
             <!-- Divider -->
             <hr class="sidebar-divider">
 

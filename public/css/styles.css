@@ -6819,12 +6819,12 @@ textarea.form-control-lg {
 
 /* yellow */
 .shadow-lgbt-4 {
-  box-shadow: 0 0.5rem 1rem rgba(255, 255, 65, 0.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(230, 255, 3, 0.20) !important;
 }
 
 /* oragen */
 .shadow-lgbt-5 {
-  box-shadow: 0 0.5rem 1rem rgba(255, 165, 44, 0.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(255, 165, 44, 0.20) !important;
 }
 
 /* red */
