@@ -2,10 +2,10 @@
 @section('main')
     
 <h2>Caixa de entrada</h2>
-{{-- @foreach ($contact as $contact)
+@foreach ($contacts as $contact)
 <li>{{ $contact->name }}</li>
-@endforeach --}}
-<table>
+@endforeach 
+{{-- <table>
   <tr>
       <th>Remetente</th>
       <th>Mensagem</th>
@@ -23,5 +23,5 @@
     <td>Centro comercial Moctezuma</td>
     <td>(xx) xxxx-xxxx</td>
   </tr>
-</table> 
+</table>  --}}
 @endsection
