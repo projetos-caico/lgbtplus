@@ -2,6 +2,8 @@
 
 namespace App\Mail;
 
+use App\Models\Admin;
+use App\Models\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -11,14 +13,18 @@ class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $author;
+    protected $mensage;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Admin $admin, Contact $contact)
     {
-        //
+        $this->author = $admin;
+        $this->contact = $contact; 
     }
 
     /**
@@ -28,6 +34,12 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from('lgbtrural@gmail.com')
+            ->to('romerito.campos@gmail.com')
+            ->view('site.mail.contact')
+            ->with([                
+                'name' => $this->author->name,
+                'message' => $this->contact->message,
+            ]);
     }
 }

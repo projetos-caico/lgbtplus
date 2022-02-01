@@ -28,16 +28,6 @@
         <span class="focus-input100" data-symbol="&#xf206;"></span>
     </div>
 
-    {{-- <div class="wrap-input100 validate-input m-b-25" data-validate = "email is required">
-        <span class="label-input100">Número de cadastro</span>
-        <input class="input100" type="admin_number" name="admin_number" id="admin_number" placeholder="Nº de cadastro" required>
-        <span class="focus-input100" data-symbol="&#xf206;"></span>
-        @error('email')
-			<span class="alert alert-danger">{{$errors->first('email')}}</span>
-		@enderror
-    </div> --}}
-
-
     @error('password')
         {{$message}}
     @enderror
