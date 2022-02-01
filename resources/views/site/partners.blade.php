@@ -1,5 +1,5 @@
-<section class="py-5">
-    <div class="container my-5">
+<section class="py-4">
+    <div class="container my-4">
         <div class="row mt-2">
             <div class="col">
                 <div class="row gx-5 row-cols-1">

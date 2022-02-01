@@ -61,7 +61,7 @@
             </div>
         </div>
         <!-- Contact cards-->
-        <div class="row gx-5 row-cols-2 row-cols-lg-3 py-5">
+        <div class="row gx-5 row-cols-2 row-cols-lg-3 mt-2">
             {{-- <div class="col">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat-dots"></i></div>
                 <div class="h5 mb-2">Fale com a gente</div>
@@ -77,8 +77,8 @@
                 <div class="h5">Suporte</div>
                 <p class="text-muted mb-0">Tire dúvidas, compartilhe informações.</p>
             </div> --}}
-            <div class="col">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3 text-center"><i class="bi bi-telephone"></i></div>
+            <div class="col mx-auto">
+                <div class="feature bg-primary bg-gradient text-white rounded-3"><i class="bi bi-telephone"></i></div>
                 <div class="h5">Ligue/ WhatsApp</div>
                 <p class="text-muted mb-0">(81) 99766-5814.</p>
             </div>
