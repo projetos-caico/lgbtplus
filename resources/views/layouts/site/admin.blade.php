@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Perfil</title>
+    <title>Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -69,7 +69,6 @@
                     </div>
                 </div>
             </li>
-            @can('is_admin')
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -82,11 +81,9 @@
                         {{-- <h6 class="collapse-header">Custom Utilities:</h6> --}}
                         <a class="collapse-item" href="#">Todos os usuários</a>
                         <a class="collapse-item" href="#">Criar usuário</a>
-                        <a class="collapse-item" href="#">Apagar usuário</a>
                     </div>
                 </div>
             </li>
-            @endcan
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -104,7 +101,7 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-gradient py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Caixa de entrada</a>
+                        <a class="collapse-item" href="{{route('list.email')}}">Caixa de entrada</a>
                         <a class="collapse-item" href="#">Novo email</a>
                         <a class="collapse-item" href="#">Lixeira</a>
                     </div>
@@ -343,10 +340,9 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    @yield('main')
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                         {{-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                             <i class="fas fa-download fa-sm text-white-50"></i> 
                             Generate Report
