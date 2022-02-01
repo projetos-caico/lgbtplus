@@ -12,15 +12,7 @@ use Illuminate\Http\Request;
 class AdminLoginController extends Controller
 {
 
-    public function __construct ()
-     {
-        $this->middleware('guest')
-            ->except(['logout']);
-
-        $this->middleware('auth:admin')
-            ->only('logout');
-    }
-    
+     
     public function create(){
 
         return view('auth.login-admin');

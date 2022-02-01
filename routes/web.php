@@ -7,7 +7,7 @@ use App\Http\Controllers\ContactController;
 
 
 Route::get('/dashboard', function(){
-    return view('dashboard.homepage');
+    return view('site.homepage');
 })->middleware(['auth'])->name('user.home');
 
 Route::get('/', function () {
@@ -23,6 +23,7 @@ Route::get('/sobre', function () {
 })->name('site.sobre');
 
 Route::get('/perfil', [AdminController::class, 'profile'])
+    ->middleware('auth:admin')
     ->name('admin.home');
 
 Route::get('/contato', [ContactController::class, 'contact'])
