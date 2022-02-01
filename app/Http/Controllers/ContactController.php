@@ -11,6 +11,12 @@ class ContactController extends Controller
     public function contact () {
         return view ('site.contact');
     }
+    
+    public function index(){
+      $contacts = Contact::all();
+
+      return view('contact.index', ['contacts'=>$contact]);
+    }
 
     public function sendMail(SendContact $request)
     {

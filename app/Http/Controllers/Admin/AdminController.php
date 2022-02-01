@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
        
-    public function profile () {
+    public function home () {
         return view('layouts.site.admin');
     }
 
