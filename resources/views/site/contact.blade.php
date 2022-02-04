@@ -10,7 +10,7 @@
             <div class="text-center mb-5">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
                 <h1 class="fw-bolder">Entre em contato</h1>
-                <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ut velit minima minus quis ducimus, delectus consequatur, placeat voluptatum, quisquam dolore repellat? Omnis adipisci alias hic minima quibusdam earum rem./p>
+                <p class="lead fw-normal text-muted mb-0">No caso de dúvidas, entre em contato conosco. E se quiser responder o questionário por telefone, <br> escreva-nos marcando um horário e nós te ligaremos.. </p>
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
@@ -61,26 +61,26 @@
             </div>
         </div>
         <!-- Contact cards-->
-        <div class="row gx-5 row-cols-2 row-cols-lg-3 py-5">
-            <div class="col">
+        <div class="row gx-5 row-cols-2 row-cols-lg-3 mt-2">
+            {{-- <div class="col">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat-dots"></i></div>
                 <div class="h5 mb-2">Fale com a gente</div>
-                <p class="text-muted mb-0">Chat live with one of our support specialists.</p>
+                <p class="text-muted mb-0">Converse com alguém da nossa equipe.</p>
             </div>
             {{-- <div class="col">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people"></i></div>
                 <div class="h5">Ask the community</div>
                 <p class="text-muted mb-0">Explore our community forums and communicate with other users.</p>
-            </div> --}}
+            </div> 
             <div class="col">
                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-question-circle"></i></div>
                 <div class="h5">Suporte</div>
-                <p class="text-muted mb-0">Browse FAQ's and support articles to find solutions.</p>
-            </div>
-            <div class="col">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-telephone"></i></div>
-                <div class="h5">Ligue</div>
-                <p class="text-muted mb-0">Call us during normal business hours at (555) 892-9403.</p>
+                <p class="text-muted mb-0">Tire dúvidas, compartilhe informações.</p>
+            </div> --}}
+            <div class="col mx-auto">
+                <div class="feature bg-primary bg-gradient text-white rounded-3"><i class="bi bi-telephone"></i></div>
+                <div class="h5">Ligue/ WhatsApp</div>
+                <p class="text-muted mb-0">(81) 99766-5814.</p>
             </div>
         </div>
     </div>

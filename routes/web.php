@@ -29,4 +29,4 @@ Route::get('/perfil', function () {
 })->name('admin')->middleware('auth');
 
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';

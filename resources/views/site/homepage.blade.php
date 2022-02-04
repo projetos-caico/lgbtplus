@@ -11,7 +11,7 @@
             <div class="col-lg-8 col-xl-7 col-xxl-6">
                 <div class="my-5 text-center text-xl-start">
                     <h1 class="display-5 fw-bolder text-white mb-2">Pesquisa sobre a vida da População LGBT+ do rural nordestino</h1>
-                    <p class="lead fw-normal text-white mb-4">O formulário, no link, abaixo, é destinado para a População LGBT+ que vive no meio rural da região Nordeste. Disponibilizamos um glossário para quem tiver alguma dúvida sobre as categorias de Orientação Sexual e Identidade de Gênero.</p>
+                    <p class="lead fw-normal text-white mb-4">O formulário, no link abaixo, é destinado para a População LGBT+ que vive no meio rural da região Nordeste. Disponibilizamos um glossário para quem tiver alguma dúvida sobre as categorias de Orientação Sexual e Identidade de Gênero.</p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                         <a class="btn btn-lgbt-primary btn-lg px-4 me-sm-3" href="{{url('/pesquisa')}}">Formulário</a>
                         <a class="btn btn-outline-lgbt-light btn-lg px-4" href="#glossary">Glossário</a>

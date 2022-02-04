@@ -7,7 +7,7 @@
                 <span class="text-white mx-1">&middot;</span>
                 <a class="link-light small" href="#!">Termos</a>
                 <span class="text-white mx-1">&middot;</span>
-                <a class="link-light small" href="#!">Contato</a>
+                <a class="link-light small" href="{{route('site.contato')}}">Contato</a>
             </div>
         </div>
     </div>
