@@ -3,13 +3,13 @@
 namespace App\Mail;
 
 use App\Models\Admin;
-use App\Models\Contact;
+use App\Models\Message;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ContactMail extends Mailable
+class MessageMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -21,7 +21,7 @@ class ContactMail extends Mailable
      *
      * @return void
      */
-    public function __construct(Admin $admin, Contact $contact)
+    public function __construct(Admin $admin, Message $contact)
     {
         $this->author = $admin;
         $this->contact = $contact; 

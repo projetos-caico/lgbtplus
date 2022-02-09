@@ -2,9 +2,10 @@
 
 namespace Tests\Feature;
 
-use App\Mail\ContactMail;
+
+use App\Mail\MessageMail;
 use App\Models\Admin;
-use App\Models\Contact;
+use App\Models\Message;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Mail;
@@ -28,10 +29,10 @@ class ContactTest extends TestCase
         Mail::fake();
 
         $admin = Admin::factory()->create();
-        $contact = Contact::first();
+        $contact = Message::first();
 
-        Mail::send(new ContactMail($admin, $contact));
-        Mail::assertSent(ContactMail::class);
+        Mail::send(new MessageMail($admin, $contact));
+        Mail::assertSent(MessageMail::class);
 
         // Mail::assertSent(ContactMail::class, function($mail) {
             
@@ -50,15 +51,15 @@ class ContactTest extends TestCase
 
         $user = Admin::first();
 
-        $message = Contact::first()->message;
-        $email = Contact::first()->email;
+        $message = Message::first()->message;
+        $email = Message::first()->email;
 
         $response = $this->actingAs($user, 'admin')->get('/dashboard/email/1/show');
         $response->assertStatus(200);
         $response->assertSeeText($email);
         $response->assertSeeText($message);
 
-        $this->assertEquals(1,Contact::first()->status);
+        $this->assertEquals(1,Message::first()->status);
         
     }
 
@@ -95,12 +96,12 @@ class ContactTest extends TestCase
      */
     public function messages_read_after_access () {
         $admin = Admin::first();
-        Contact::factory()->create();
+        Message::factory()->create();
         $response = $this->actingAs($admin, 'admin')
             ->get('/dashboard/email/1/show');
         $response->assertStatus(200);
-        $status = Contact::first()->status;
-        $this->assertEquals($status,Contact::LIDO);
+        $status = Message::first()->status;
+        $this->assertEquals($status,Message::LIDO);
     }
 
     

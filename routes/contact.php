@@ -1,8 +1,8 @@
 <?php
 
 
-use App\Http\Controllers\Dashboard\ContactController;
-use App\Http\Controllers\Contact\ContactController as PublicContactController;
+use App\Http\Controllers\Dashboard\MessageController;
+use App\Http\Controllers\Message\MessageController as PublicMessageController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Contact;
 
@@ -14,10 +14,10 @@ use App\Models\Contact;
  * 
  */
 
-Route::get('/contato', [PublicContactController::class, 'contact'])
+Route::get('/contato', [PublicMessageController::class, 'contact'])
     ->name('site.contact');
 
-Route::post('/contato', [PublicContactController::class, 'sendMail'])
+Route::post('/contato', [PublicMessageController::class, 'sendMail'])
     ->name('site.sendContact');
 
 
@@ -26,10 +26,10 @@ Route::post('/contato', [PublicContactController::class, 'sendMail'])
 
 Route::group(['prefix'=>'dashboard', 'middleware'=>['auth:admin']], function() {    
 
-    Route::get('/email', [ContactController::class, 'index'])
+    Route::get('/email', [MessageController::class, 'index'])
         ->name('list.email');
 
-    Route::get('/email/{contact}/show', [ContactController::class, 'show'])
+    Route::get('/email/{message}/show', [MessageController::class, 'show'])
         ->name('see.email');
 
 }); 

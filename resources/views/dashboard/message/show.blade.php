@@ -18,27 +18,31 @@
   <div class="card-body">         
     
     <div class="row justify-content-between align-items-center px-2">
-        <h5 class="card-title font-weight-light">Nome: <b>{{$contact->name}}</b></h5>
-        <span class="badge badge-primary">{{$contact->status()}}</span>
+        <h5 class="card-title font-weight-light">Nome: <b>{{$message->name}}</b></h5>
+        <span class="badge badge-primary">{{$message->status()}}</span>
     </div>
     
     <div class="row px-2">
-      <h6 class="card-subtitle font-weight-light">{{$contact->email}}</h6>
+      <h6 class="card-subtitle font-weight-light">{{$message->email}}</h6>
     </div>
-
-    {{-- <div class="row px-2">
-      <h6 class="font-weight-light"></h6>
-    </div> --}}
-
     <hr>
     <div class="card-text">
       <div class="row justify-content-between align-items-center px-3">
-        <p class="font-weight-light">{{$contact->date()}}</p>
-        <span><i class="fas fa-reply fa-lg"></i></span>
+        <p class="font-weight-light">{{$message->date()}}</p>
+        <span>
+          <a class="btn-link" id="reply-button">
+            <i class="fas fa-reply fa-lg"></i>
+          </a>
+        </span>
       </div>
       
-      <p>{{$contact->message}}</p>
+      <p>{{$message->message}}</p>
 
+    </div>
+
+    <hr>
+    <div class="card-text">
+      @include('dashboard.message.form')
     </div>
     
   </div>
@@ -49,4 +53,17 @@
 @section('scripts')
 <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+<script>
+  $("#reply-button").click(function(){
+    var form = document.getElementById("form");
+    if (form.style.display === "none") {
+      form.style.display = "block";
+      console.log("block");
+    } else {
+      form.style.display = "none";
+      console.log("none");
+    }
+  });
+</script>
 @endsection

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SendContact extends FormRequest
+class SendMessage extends FormRequest
 {
 
     /**
