@@ -429,6 +429,13 @@ legend {
   font-size: calc(1.275rem + 0.3vw);
   line-height: inherit;
 }
+
+w-badge {
+  width: 18px;
+  padding: 10px
+}
+
+
 @media (min-width: 1200px) {
   legend {
     font-size: 1.5rem;

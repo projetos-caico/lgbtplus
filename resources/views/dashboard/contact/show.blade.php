@@ -12,19 +12,33 @@
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">
-      Mensagens
+      Mensagem
     </h6>
   </div>
   <div class="card-body">         
-    <div class="row px-2">
+    
+    <div class="row justify-content-between align-items-center px-2">
         <h5 class="card-title font-weight-light">Nome: <b>{{$contact->name}}</b></h5>
+        <span class="badge badge-primary">{{$contact->status()}}</span>
     </div>
+    
     <div class="row px-2">
-        <h6 class="card-subtitle font-weight-light">{{$contact->email}}</h6>
+      <h6 class="card-subtitle font-weight-light">{{$contact->email}}</h6>
     </div>
+
+    {{-- <div class="row px-2">
+      <h6 class="font-weight-light"></h6>
+    </div> --}}
+
     <hr>
     <div class="card-text">
-        {{$contact->message}}
+      <div class="row justify-content-between align-items-center px-3">
+        <p class="font-weight-light">{{$contact->date()}}</p>
+        <span><i class="fas fa-reply fa-lg"></i></span>
+      </div>
+      
+      <p>{{$contact->message}}</p>
+
     </div>
     
   </div>
