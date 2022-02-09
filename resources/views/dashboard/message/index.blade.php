@@ -29,19 +29,19 @@
           <th>Ações</th>
         </tfoot>
         <tbody>
-          @foreach ($contacts as $contact)
+          @foreach ($messages as $message)
           <tr>
-            <td>{{$contact->name}}</td>
+            <td>{{$message->name}}</td>
             <td style="max-width:50%">
               <div class="row justify-content-between mx-1">
-                {{$contact->email}} 
+                {{$message->email}} 
                 
-                @if($contact->status == 0)
-                <span class="badge badge-primary">{{$contact->status()}}</span>
-                @elseif($contact->status == 1)
-                <span class="badge badge-secondary">{{$contact->status()}}</span>
+                @if($message->status == 0)
+                <span class="badge badge-primary">{{$message->status()}}</span>
+                @elseif($message->status == 1)
+                <span class="badge badge-secondary">{{$message->status()}}</span>
                 @else
-                <span class="badge badge-success">{{$contact->status()}}</span>
+                <span class="badge badge-success">{{$message->status()}}</span>
                 @endif
                 
               </div>
@@ -51,7 +51,7 @@
                 <a href="" class="pr-3">
                   <i class="fas fa-reply"></i>
                 </a>   
-                <a href="{{route('see.email', ['contact'=>$contact]) }}">
+                <a href="{{route('see.email', ['message'=>$message]) }}">
                   <i class="fas fa-eye"></i>
                 </a>                 
               </div>
@@ -62,7 +62,7 @@
       </table>{{-- end of table --}}
     </div>
     <div class="row justify-content-end pr-3">
-      {{ $contacts->links() }}
+      {{ $messages->links() }}
     </div>
     
   </div>

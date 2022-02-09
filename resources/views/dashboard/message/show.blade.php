@@ -18,12 +18,12 @@
   <div class="card-body">         
     
     <div class="row justify-content-between align-items-center px-2">
-        <h5 class="card-title font-weight-light">Nome: <b>{{$contact->name}}</b></h5>
-        <span class="badge badge-primary">{{$contact->status()}}</span>
+        <h5 class="card-title font-weight-light">Nome: <b>{{$message->name}}</b></h5>
+        <span class="badge badge-primary">{{$message->status()}}</span>
     </div>
     
     <div class="row px-2">
-      <h6 class="card-subtitle font-weight-light">{{$contact->email}}</h6>
+      <h6 class="card-subtitle font-weight-light">{{$message->email}}</h6>
     </div>
 
     {{-- <div class="row px-2">
@@ -33,11 +33,11 @@
     <hr>
     <div class="card-text">
       <div class="row justify-content-between align-items-center px-3">
-        <p class="font-weight-light">{{$contact->date()}}</p>
+        <p class="font-weight-light">{{$message->date()}}</p>
         <span><i class="fas fa-reply fa-lg"></i></span>
       </div>
       
-      <p>{{$contact->message}}</p>
+      <p>{{$message->message}}</p>
 
     </div>
     
