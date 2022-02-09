@@ -1,28 +1,28 @@
 <?php
 
-namespace App\Http\Controllers\Contact;
+namespace App\Http\Controllers\Message;
 
-use App\Http\Requests\SendContact;
-use App\Models\Contact;
+use App\Http\Requests\SendMessage;
+use App\Models\Message;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 
-class ContactController extends Controller
+class MessageController extends Controller
 {
     public function contact () {
         return view ('site.contact');
     }
     
     public function index(){
-      $contacts = Contact::all();
+      $contacts = Message::all();
 
       return view('contact.index', ['contacts'=>$contacts]);
     }
 
-    public function sendMail(SendContact $request)
+    public function sendMail(SendMessage $request)
     {
         
-        $contact = Contact::factory($request->only([
+        $contact = Message::factory($request->only([
             'name','email', 'phone', 'message']))
             ->make();
 

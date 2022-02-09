@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class ContactSeeder extends Seeder
+class MessageSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class ContactSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\Contact::factory(50)->create();
+         \App\Models\Message::factory(50)->create();
     }
 }

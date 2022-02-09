@@ -11,9 +11,23 @@
 
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">
-      Mensagens
-    </h6>
+    <div class="row justify-content-between align-items-center px-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+        Mensagens
+      </h6>
+      <span>
+        <a href="{{route('list.email', ['filter'=>'0','page'=>$messages->currentPage()])}}" class="px-2">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="{{route('list.email', ['filter'=>'1', 'page'=>$messages->currentPage()])}}" class="px-2">
+          <i class="fas fa-envelope-open"></i>
+        </a>
+        <a href="{{route('list.email', ['filter'=>'2', 'page'=>$messages->currentPage()])}}" class="px-2">
+          <i class="fas fa-envelope-open-text"></i>
+        </a>
+      </span>
+    </div>
+    
   </div>
   <div class="card-body">
     <div class="table-responsive" >
@@ -29,19 +43,19 @@
           <th>Ações</th>
         </tfoot>
         <tbody>
-          @foreach ($contacts as $contact)
+          @foreach ($messages as $message)
           <tr>
-            <td>{{$contact->name}}</td>
+            <td>{{$message->name}}</td>
             <td style="max-width:50%">
               <div class="row justify-content-between mx-1">
-                {{$contact->email}} 
+                {{$message->email}} 
                 
-                @if($contact->status == 0)
-                <span class="badge badge-primary">{{$contact->status()}}</span>
-                @elseif($contact->status == 1)
-                <span class="badge badge-secondary">{{$contact->status()}}</span>
+                @if($message->status == 0)
+                <span class="badge badge-primary">{{$message->status()}}</span>
+                @elseif($message->status == 1)
+                <span class="badge badge-secondary">{{$message->status()}}</span>
                 @else
-                <span class="badge badge-success">{{$contact->status()}}</span>
+                <span class="badge badge-success">{{$message->status()}}</span>
                 @endif
                 
               </div>
@@ -51,7 +65,7 @@
                 <a href="" class="pr-3">
                   <i class="fas fa-reply"></i>
                 </a>   
-                <a href="{{route('see.email', ['contact'=>$contact]) }}">
+                <a href="{{route('see.email', ['message'=>$message]) }}">
                   <i class="fas fa-eye"></i>
                 </a>                 
               </div>
@@ -62,7 +76,7 @@
       </table>{{-- end of table --}}
     </div>
     <div class="row justify-content-end pr-3">
-      {{ $contacts->links() }}
+      {{ $messages->links() }}
     </div>
     
   </div>
@@ -80,7 +94,7 @@
     $("#dataTable").DataTable({
       "paging": false,
       "info": false,
-      "search": false,  
+      "search": false,
     });
   });
 </script>

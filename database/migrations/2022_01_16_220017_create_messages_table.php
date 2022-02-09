@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddContactStatusTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AddContactStatusTable extends Migration
      */
     public function up()
     {
-        Schema::table('contacts', function (Blueprint $table) {
-            $table->integer('status')->default(0); //0 - não lido
+        Schema::create('messages', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->text('message');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class AddContactStatusTable extends Migration
      */
     public function down()
     {
-        Schema::table('Contact', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('messages');
     }
 }
