@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Perfil</title>
+    <title>Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -19,6 +19,8 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+
+     @yield('links')
 
 </head>
 
@@ -43,7 +45,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{route('admin')}}">
+                <a class="nav-link" href="{{route('admin.home')}}">
                     <span>Dashboard</span></a>
             </li>
 
@@ -81,7 +83,6 @@
                         {{-- <h6 class="collapse-header">Custom Utilities:</h6> --}}
                         <a class="collapse-item" href="#">Todos os usuários</a>
                         <a class="collapse-item" href="#">Criar usuário</a>
-                        <a class="collapse-item" href="#">Apagar usuário</a>
                     </div>
                 </div>
             </li>
@@ -102,7 +103,7 @@
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-gradient py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Caixa de entrada</a>
+                        <a class="collapse-item" href="{{route('list.email')}}">Caixa de entrada</a>
                         <a class="collapse-item" href="#">Novo email</a>
                         <a class="collapse-item" href="#">Lixeira</a>
                     </div>
@@ -306,7 +307,8 @@
                                     @if (Auth::check())
                                         {{Auth::user()->name}}
                                     @else
-                                    @endif </span>
+                                    @endif 
+                                </span>
                                 <img class="img-profile rounded-circle"
                                     src="{{asset('images/undraw_profile.svg')}}">
                             </a>
@@ -340,10 +342,9 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    @yield('main')
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                         {{-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                             <i class="fas fa-download fa-sm text-white-50"></i> 
                             Generate Report
@@ -704,7 +705,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form id="logout" action="{{ route('logout') }}" method="POST">
+                <form id="logout" action="{{ route('admin.logout') }}" method="POST">
                     @csrf
                  </form>
                 <div class="modal-body">Selecione "sair" se você quiser encerrar a sessão.</div>
@@ -725,13 +726,9 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+   
 
-    <!-- Page level plugins -->
-    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
+    @yield('scripts')
 
 </body>
 
