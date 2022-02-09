@@ -1,29 +1,42 @@
 <?php
 
-use App\Http\Controllers\ContactController;
+
+use App\Http\Controllers\Dashboard\ContactController;
+use App\Http\Controllers\Contact\ContactController as PublicContactController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Contact;
 
-/** public routes */
-Route::get('/contato', [ContactController::class, 'contact'])
+/**
+ * Neste arquivo, foram adicionadas rotas para lidar com o contato com
+ * o projeto via form disponível em http://lgbtrural.ca.ifrn.edu.br/contato.
+ * 
+ * 
+ * 
+ */
+
+Route::get('/contato', [PublicContactController::class, 'contact'])
     ->name('site.contact');
 
-Route::post('/contato', [ContactController::class, 'sendMail'])
+Route::post('/contato', [PublicContactController::class, 'sendMail'])
     ->name('site.sendContact');
 
 
 /** admin routes */
 
-Route::get('/dashboard/email', function () {
-        $contacts = Contact::all();
-        return view('contact.index', [
-            "contacts" => $contacts
-        ]);
-    })->name('list.email');
 
-Route::get('/dashboard/email/{contact}', function(Contact $contact){
-    return view ('contact.show', ['contact'=>$contact] );
-})->name ('see.email');
+Route::group(['prefix'=>'dashboard', 'middleware'=>['auth:admin']], function() {    
+
+    Route::get('/email', [ContactController::class, 'index'])
+        ->name('list.email');
+
+    Route::get('/email/{contact}/show', [ContactController::class, 'show'])
+        ->name('see.email');
+
+}); 
+    
+
+
+
 
 use Faker\Factory as Faker;
 Route::get('/mail', function(){

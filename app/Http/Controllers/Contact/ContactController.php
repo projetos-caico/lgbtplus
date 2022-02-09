@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Contact;
 
 use App\Http\Requests\SendContact;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
 {
@@ -15,7 +16,7 @@ class ContactController extends Controller
     public function index(){
       $contacts = Contact::all();
 
-      return view('contact.index', ['contacts'=>$contact]);
+      return view('contact.index', ['contacts'=>$contacts]);
     }
 
     public function sendMail(SendContact $request)

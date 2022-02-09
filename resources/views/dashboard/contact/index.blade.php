@@ -32,11 +32,21 @@
           @foreach ($contacts as $contact)
           <tr>
             <td>{{$contact->name}}</td>
-            <td>{{$contact->email}}</td>
+            <td style="max-width:50%">
+              <div class="row justify-content-between mx-1">
+                {{$contact->email}} 
+                <span class="badge badge-secondary">{{$contact->status()}}</span>
+              </div>
+            </td>
             <td> 
-              <a href="{{route('see.email', ['contact'=>$contact]) }}">
-                <i class="fas fa-eye"></i>
-              </a> 
+              <div class="row justify-content-center">
+                <a href="" class="pr-3">
+                  <i class="fas fa-reply"></i>
+                </a>   
+                <a href="{{route('see.email', ['contact'=>$contact]) }}">
+                  <i class="fas fa-eye"></i>
+                </a>                 
+              </div>
             </td>
           </tr>
           @endforeach
