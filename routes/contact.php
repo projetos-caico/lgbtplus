@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\Dashboard\MessageController;
-use App\Http\Controllers\Contact\MessageController as PublicMessageController;
+use App\Http\Controllers\Message\MessageController as PublicMessageController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Contact;
 

@@ -11,10 +11,19 @@ class MessageController extends Controller
 
     public function index (Request $request) {
 
-        //0 - não lidas.
-        $messages = Message::paginate(10);
+        $filter = $request->query('filter');
+
+        if ($filter) {
+            $messages = Message::where('status', '=', $filter)
+                ->orderBy('created_at','asc')
+                ->orderBy('status');
+        } else {
+            $messages = Message::orderBy('created_at','asc')
+                ->orderBy('status');
+        }
+
         return view('dashboard.message.index', [
-            "messages" => $messages
+            "messages" => $messages->paginate(10),
         ]);
 
     }
@@ -23,6 +32,10 @@ class MessageController extends Controller
         $message->status = Message::LIDO; //lida
         $message->save();        
         return view('dashboard.message.show', ['message'=>$message]);
+    }
+
+    public function reply(Request $request, Message $message) {
+        
     }
 
 }
