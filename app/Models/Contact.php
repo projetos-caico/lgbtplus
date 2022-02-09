@@ -34,4 +34,10 @@ class Contact extends Model
                 break;
         }
     }
+
+    public function date () {
+        return $this->created_at
+            ->locale('pt-BR')
+            ->translatedFormat('d \de F Y');
+    }
 }
