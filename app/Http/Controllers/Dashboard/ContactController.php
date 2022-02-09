@@ -12,7 +12,7 @@ class ContactController extends Controller
     public function index (Request $request) {
 
         //0 - não lidas.
-        $contacts = Contact::where('status', '=', Contact::NAOLIDO)->get();
+        $contacts = Contact::paginate(10);
         return view('dashboard.contact.index', [
             "contacts" => $contacts
         ]);

@@ -35,7 +35,15 @@
             <td style="max-width:50%">
               <div class="row justify-content-between mx-1">
                 {{$contact->email}} 
+                
+                @if($contact->status == 0)
+                <span class="badge badge-primary">{{$contact->status()}}</span>
+                @elseif($contact->status == 1)
                 <span class="badge badge-secondary">{{$contact->status()}}</span>
+                @else
+                <span class="badge badge-success">{{$contact->status()}}</span>
+                @endif
+                
               </div>
             </td>
             <td> 
@@ -51,14 +59,30 @@
           </tr>
           @endforeach
         </tbody>
-      </table>
+      </table>{{-- end of table --}}
     </div>
+    <div class="row justify-content-end pr-3">
+      {{ $contacts->links() }}
+    </div>
+    
   </div>
 </div>
 
 @endsection
 
 @section('scripts')
+
 <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+<script>
+  $(document).ready(function(){
+    $("#dataTable").DataTable({
+      "paging": false,
+      "info": false,
+      "search": false,  
+    });
+  });
+</script>
+
 @endsection
