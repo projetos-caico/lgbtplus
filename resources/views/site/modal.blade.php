@@ -9,7 +9,7 @@
         </div>
         <div class="modal-body">
 
-            <a href="#" class="btn btn-lgbt-primary btn-lg btn-block"> Admin </a>
+            {{-- <a href="#" class="btn btn-lgbt-primary btn-lg btn-block"> Admin </a> --}}
             {{-- <a href="#" class="btn btn-lgbt-secondary btn-lg btn-block"> Usuário </a> --}}
 
             <a href="{{route('admin.login')}}" class="btn btn-lgbt-primary btn-lg btn-block"> Admin </a>
