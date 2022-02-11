@@ -47,15 +47,15 @@
 		</div>
 	</div>
 	
-	<div class="flex-col-c p-t-25">
+	{{-- <div class="flex-col-c p-t-25"> --}}
 		{{-- espaçamento do cadastre-se aqui p-t-*55* --}}
-		<span class="txt1 p-b-12">
-			Não tem conta?
-			<a href="{{route('register-admin')}}" class="txt1">
-				Cadastre-se aqui.
-			</a>
-		</span>  
-	</div>
+		{{-- <span class="txt1 p-b-12"> --}}
+			{{-- Não tem conta? --}}
+			{{-- <a href="{{route('register-admin')}}" class="txt1"> --}}
+				{{-- Cadastre-se aqui. --}}
+			{{-- </a> --}}
+		{{-- </span>   --}}
+	{{-- </div> --}}
 </form>
 </div>
 @endsection
