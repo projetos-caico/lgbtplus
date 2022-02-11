@@ -22,9 +22,8 @@ class MessageController extends Controller
     public function sendMail(SendMessage $request)
     {
         
-        $contact = Message::factory($request->only([
-            'name','email', 'phone', 'message']))
-            ->make();
+        $contact = Message::make($request->only([
+            'name','email', 'phone', 'message']));
 
         $contact->save();
 

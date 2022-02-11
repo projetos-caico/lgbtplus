@@ -13,7 +13,7 @@ class CreateAdminUser extends Command
      *
      * @var string
      */
-    protected $signature = 'admin:user {email}';
+    protected $signature = 'admin:user {email} {senha}';
 
     /**
      * The console command description.
@@ -42,12 +42,13 @@ class CreateAdminUser extends Command
         $this->info($this->description);
 
         $email = $this->argument('email');
+        $senha = $this->argument('senha');
 
         $count = Admin::where('email', '=', $email)->count();
 
         if ($count === 0) {
             $this->line('<fg=blue>Usuário em criação: '. $email);
-            $admin = Admin::factory()->make(['email'=>$email]);
+            $admin = Admin::make(['email'=>$email, 'senha'=>$senha]);
             $admin->save();
 
             $this->line('<fg=blue>Email já utilizado: '. $email);
