@@ -9,7 +9,7 @@
 <form class="login100-form validate-form" method="POST" action="{{url('/login/admin') }}">
 	@csrf
 	<span class="login100-form-title p-b-49">
-		Login Admin
+		Login
 	</span>	
 
     <div class="wrap-input100 validate-input m-b-30" data-validate = "email is reauired">
