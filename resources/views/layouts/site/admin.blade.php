@@ -49,7 +49,7 @@
                     <span>Dashboard</span></a>
             </li>
 
-            <!-- Divider -->
+            @can('criar post', 'admin, manager')
             <hr class="sidebar-divider">
 
             <!-- Heading -->
@@ -58,6 +58,8 @@
             </div> --}}
 
             <!-- Nav Item - Pages Collapse Menu -->
+            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-target="#collapseTwo" data-toggle="collapse"
                     aria-expanded="true" aria-controls="collapseTwo" aria-controls="collapseUtilities">
@@ -71,23 +73,30 @@
                     </div>
                 </div>
             </li>
+            @endcan
+
+            @role('manager', 'admin')
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-users"></i>
                     <span>Usuários</span>
                 </a>
+                    
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-gradient py-2 collapse-inner rounded">
                         {{-- <h6 class="collapse-header">Custom Utilities:</h6> --}}
-                        <a class="collapse-item" href="#">Todos os usuários</a>
-                        <a class="collapse-item" href="#">Criar usuário</a>
+                        <a class="collapse-item" href="{{route('usuarios.index')}}">Todos os usuários</a>
+                        <a class="collapse-item" href="{{route('usuarios.create')}}">Criar usuário</a>
                     </div>
                 </div>
+                
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
+            @endrole
+
 
             <!-- Heading -->
             {{-- <div class="sidebar-heading">

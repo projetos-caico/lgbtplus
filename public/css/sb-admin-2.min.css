@@ -9,7 +9,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
     --blue: #4e73df;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -2772,14 +2772,15 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-    color: #858796;
-    border-color: #858796
+    color: #fff;
+    background-color: var(--bs-lgbt-coral);
+    border-color: var(--bs-lgbt-coral);
 }
 
 .btn-outline-secondary:hover {
     color: #fff;
-    background-color: #858796;
-    border-color: #858796
+    background-color: rgba(255, 31, 68, 0.815);
+    border-color: rgb(255, 31, 68, 0.815);
 }
 
 .btn-outline-secondary.focus, .btn-outline-secondary:focus {
