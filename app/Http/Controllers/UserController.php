@@ -22,7 +22,7 @@ class UserController extends Controller
         $admins = Admin::all();
         $roles = Role::all();
 
-        return view('user.index', ['usuarios'=>$users, 'admins'=>$admins, 'roles'=>Role::all()]);
+        return view('dashboard.usuario.index', ['usuarios'=>$users, 'admins'=>$admins, 'roles'=>Role::all()]);
     }
 
     /**
@@ -33,7 +33,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::all();
-        return view('user.new-user', ['roles'=>$roles]);
+        return view('dashboard.usuario.create', ['roles'=>$roles]);
     }
 
     /**
