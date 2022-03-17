@@ -8,7 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-
+use App\Models\Role;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -19,6 +20,7 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    
     protected $fillable = [
         'name',
         'email',
@@ -44,4 +46,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function setPasswordAttribute($password){
+      $this->attributes[('password')] = Hash::make($password);
+    }
+
+    public function role(){
+        return $this->belongsToMany('App\Models\Role');
+    }
+    
 }

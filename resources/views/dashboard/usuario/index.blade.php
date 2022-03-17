@@ -12,7 +12,7 @@
                                   </div>
                               </div>
 
-                              <div class="     card shadow mb-4">
+                              <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">
                             Todos os usuários
@@ -25,42 +25,46 @@
                                     <th>ID</th>
                                     <th>Nome</th>
                                     <th>Email</th>
-                                    <th>Tipo</th>
+                                    <th>Função</th>
                                     <th>Ações</th>
                                 </thead>
                                 <tbody>
 
                                     @foreach ($usuarios as $user)
-                                        <tr>
-                                            <td>{{ $user->id }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>Comum</td>
+                                    <tr>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td></td>
+                                        @foreach ($roles as $role)
+                                           {{-- <td>{{$user->role->name}}</td> --}}
+                                        @endforeach
                                             <td><a href="#">
                                                     <i class="far fa-eye"></i>
                                                 </a>
-                                                <a class="" href="#">
+                                                <a href="#">
                                                     <i class="fas fa-user-slash"></i>
                                                 </a>
-                                                <a href="">
+                                                <a href="#">
                                                     <i class="fas fa-user-edit"></i>
                                                 </a>
                                             </td>
                                         </tr>
                                     @endforeach
+                                    
                                     @foreach ($admins as $admin)
                                         <tr>
                                             <td>{{ $admin->id }}</td>
                                             <td>{{ $admin->name }}</td>
                                             <td>{{ $admin->email }}</td>
-                                            <td>Gerenciador(a)</td>
+                                            <td></td>
                                             <td><a href="" style="margin-right: 2px">
                                                     <i class="far fa-eye"></i>
                                                 </a>
                                                 <a href="#" style="margin-right: 3px">
                                                     <i class="fas fa-user-slash"></i>
                                                 </a>
-                                                <a href="">
+                                                <a href="#">
                                                     <i class="fas fa-user-edit"></i>
                                                 </a>
                                             </td>

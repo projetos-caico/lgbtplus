@@ -7,8 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Admin;
 
-
 class Role extends Model
 {
     use HasFactory;
+
+    public function users(){
+        return $this->belongsToMany('App\Models\User');
+    }
+
+    public function admins(){
+        return $this->belongsToMany('App\Models\Admin');
+    }
 }

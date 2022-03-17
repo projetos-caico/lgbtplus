@@ -15,18 +15,25 @@ class UsuarioSeeder extends Seeder
      */
     public function run()
     {
-        $user = \App\Models\User::factory()->create([
+        $user1 = \App\Models\User::factory()->create([
             'name' => 'NATALIA USER',
             'email' => 'natalia@user.com',
             'password' => bcrypt('natalia123')
         ]);
-        $user->assignRole('User');
+        $user1->assignRole('User');
     
-        $adm = \App\Models\Admin::factory()->create([
+        $user2 = \App\Models\Admin::factory()->create([
+            'name' => 'NATALIA MANAGER',
+            'email' => 'natalia@manager.com',
+            'password' => bcrypt('natalia123')
+        ]);
+        $user2->assignRole('Manager');
+    
+        $user2 = \App\Models\Admin::factory()->create([
             'name' => 'NATALIA ADM',
             'email' => 'natalia@adm.com',
             'password' => bcrypt('natalia123')
         ]);
-        $adm->assignRole('Manager');
+        $user2->assignRole('Admin');
     }
 }

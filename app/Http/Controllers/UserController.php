@@ -22,6 +22,7 @@ class UserController extends Controller
         $admins = Admin::all();
         $roles = Role::all();
 
+
         return view('dashboard.usuario.index', ['usuarios'=>$users, 'admins'=>$admins, 'roles'=>Role::all()]);
     }
 
@@ -44,32 +45,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults(), 'min:8', 'max:100'],
-        ]);
-
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        
-        event(new Registered($user));
-
-        Auth::login($user);
-
-        // $user->assignRole('user');
-        $user->getAllPermissions();
-
-        return redirect(RouteServiceProvider::HOME);
-
         // $user = User::create($request->except(['_token', 'roles']));
 
-        $user->roles()->sync($request->roles);
+        // $user->roles()->sync($request->roles);
 
-        // return redirect(route('admin'));
+        // return redirect(route('usuarios.index'));
+
+        // dd($request);
+
+        if(auth()->user()->role('admin')){
+            $admin = Admin::create($request->except(['_token', 'roles']));
+
+        $admin->roles()->sync($request->roles);
+
+        return redirect(route('usuarios.index'));
+        } 
+
     }
 
     /**
@@ -94,7 +85,7 @@ class UserController extends Controller
         $users = User::all();
         $admins = Admin::all();
         
-        return view('user.edit-user', ['admins'=>$admins, 'usuarios'=>$users]);
+        return view('dashboard.usuario.edit_user', ['admins'=>$admins, 'usuarios'=>$users]);
     }
 
     /**

@@ -48,18 +48,10 @@
                 <a class="nav-link" href="{{route('admin.home')}}">
                     <span>Dashboard</span></a>
             </li>
-
-            @can('criar post', 'admin, manager')
+            <!-- Divider -->
+            @can('criar post')
             <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            {{-- <div class="sidebar-heading">
-                Interface
-            </div> --}}
-
-            <!-- Nav Item - Pages Collapse Menu -->
             
-
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-target="#collapseTwo" data-toggle="collapse"
                     aria-expanded="true" aria-controls="collapseTwo" aria-controls="collapseUtilities">
@@ -74,8 +66,9 @@
                 </div>
             </li>
             @endcan
-
-            @role('manager', 'admin')
+            
+            @can('criar user')
+            {{-- função + guard  para @role--}}
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -95,7 +88,7 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
-            @endrole
+            @endcan
 
 
             <!-- Heading -->
@@ -127,11 +120,24 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     <i class="fas fa-cogs"></i>
-                    <span>Configurações</span></a>
+                    <span>Configurações</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
+                    <div class="py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="#">Editar perfil</a>
+                        @can('edit homepage', 'manager')
+                            
+                        <a class="collapse-item" href="#">Homepage edit</a>
+                        @endcan
+                        
+                    </div>
+                </div>
             </li>
+
+            
 
 
             <!-- Divider -->
