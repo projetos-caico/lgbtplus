@@ -15,6 +15,7 @@ Route::get('/sobre', function () {
     return view('site.about');
 })->name('site.sobre');
 
-Route::resource('dashboard/usuarios', UserController::class)->middleware('auth:admin');
+
+Route::resource('dashboard/usuarios', UserController::class)->middleware('auth');
 
 require __DIR__.'/auth.php';

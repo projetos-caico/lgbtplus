@@ -23,7 +23,7 @@
             <div class="col-sm-10">
                 @foreach ($roles as $role)
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="roles[]" id="{{$role->id}}" value="{{$role->name}}">
+                    <input class="form-check-input" type="radio" name="roles[]" id="{{$role->id}}" value="{{$role->name}}">
                         <label class="form-check-label text-capitalize" for="{{$role->name}}">
                             {{$role->name}}
                         </label>

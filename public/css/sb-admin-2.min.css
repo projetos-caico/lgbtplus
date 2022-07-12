@@ -422,6 +422,10 @@ template {
     line-height: 1.2
 }
 
+img .gmail{
+    color: #fff;
+}
+
 hr {
     margin-top: 1rem;
     margin-bottom: 1rem;

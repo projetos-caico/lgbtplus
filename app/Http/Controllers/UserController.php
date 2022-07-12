@@ -6,8 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Rules\Password;
 use App\Models\User;
-use App\Models\Admin;
-use App\Models\Role;
+// use App\Models\Admin;
+use App\Models\Roles;
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
 
 class UserController extends Controller
 {
@@ -16,14 +22,22 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+    
+        $this->middleware('auth');
+    }
+
+    public function home () {
+        return view('layouts.site.admin');
+    }
+    
     public function index()
     {
         $users = User::all();
-        $admins = Admin::all();
-        $roles = Role::all();
+        $roles = Roles::all();
 
 
-        return view('dashboard.usuario.index', ['usuarios'=>$users, 'admins'=>$admins, 'roles'=>Role::all()]);
+        return view('dashboard.usuario.index', ['usuarios'=>$users, 'roles'=>Roles::all()]);
     }
 
     /**
@@ -33,7 +47,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
+        $roles = Roles::all();
         return view('dashboard.usuario.create', ['roles'=>$roles]);
     }
 
@@ -45,21 +59,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // $user = User::create($request->except(['_token', 'roles']));
+        $roles = Roles::all(); 
+        
+        $user = User::create($request->except(['_token', 'roles']));
 
-        // $user->roles()->sync($request->roles);
+        $user->roles()->sync($request->roles);
 
-        // return redirect(route('usuarios.index'));
-
+        
         // dd($request);
+      
 
-        if(auth()->user()->role('admin')){
-            $admin = Admin::create($request->except(['_token', 'roles']));
-
-        $admin->roles()->sync($request->roles);
 
         return redirect(route('usuarios.index'));
-        } 
 
     }
 
