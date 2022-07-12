@@ -1,4 +1,4 @@
-<div class="modal fade" tabindex="-1" role="dialog" id="siteModal">
+{{-- <div class="modal fade" tabindex="-1" role="dialog" id="siteModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -8,7 +8,7 @@
           </button>
         </div>
         <div class="modal-body">
-            {{-- <a href="{{route('admin.login')}}" class="btn btn-lgbt-primary btn-lg btn-block"> Admin </a> --}}
+            {{-- <a href="{{route('admin.login')}}" class="btn btn-lgbt-primary btn-lg btn-block"> Admin </a> 
             <a href="{{route('login')}}" class="btn btn-lgbt-secondary btn-lg btn-block"> Usuário </a>
         </div>
         <div class="modal-footer">
@@ -16,4 +16,4 @@
         </div>
       </div>
     </div>
-</div>
+</div> --}}
