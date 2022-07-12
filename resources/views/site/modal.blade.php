@@ -9,7 +9,7 @@
         </div>
         <div class="modal-body">
             {{-- <a href="{{route('admin.login')}}" class="btn btn-lgbt-primary btn-lg btn-block"> Admin </a> --}}
-            <a href="{{url('/login')}}" class="btn btn-lgbt-secondary btn-lg btn-block"> Usuário </a>
+            <a href="{{route('login')}}" class="btn btn-lgbt-secondary btn-lg btn-block"> Usuário </a>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn bg-secondary text-white" data-dismiss="modal">Fechar</button>
