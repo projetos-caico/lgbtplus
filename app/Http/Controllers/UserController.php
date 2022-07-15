@@ -3,17 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use App\Http\Controllers\Rules\Password;
 use App\Models\User;
-// use App\Models\Admin;
-use App\Models\Roles;
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+
 
 class UserController extends Controller
 {
@@ -34,10 +29,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        $roles = Roles::all();
 
-
-        return view('dashboard.usuario.index', ['usuarios'=>$users, 'roles'=>Roles::all()]);
+        return view('dashboard.usuario.index', ['usuarios'=>$users, 'roles'=>null]);
     }
 
     /**
@@ -47,7 +40,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = Roles::all();
+        $roles = Role::all();
+
         return view('dashboard.usuario.create', ['roles'=>$roles]);
     }
 
@@ -59,15 +53,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $roles = Roles::all(); 
-        
-        $user = User::create($request->except(['_token', 'roles']));
 
-        $user->roles()->sync($request->roles);
+        // var_dump($request->all());
+        // die();
+        
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults(), 'min:8'],
+            'roles' => ['required'],
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
         
-        // dd($request);
-      
+        $user->assignRole($request->roles);
 
 
         return redirect(route('usuarios.index'));
