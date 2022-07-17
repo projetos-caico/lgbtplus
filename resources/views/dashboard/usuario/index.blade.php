@@ -22,7 +22,7 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" whidth="100%">
                     <thead>
-                        <th>ID</th>
+                        {{-- <th>ID</th> --}}
                         <th>Nome</th>
                         <th>Email</th>
                         {{-- <th>Função</th>
@@ -32,7 +32,7 @@
 
                         @foreach ($usuarios as $user)
                             <tr>
-                                <td>{{ $user->id }}</td>
+                                {{-- <td>{{ $user->id }}</td> --}}
                                 {{-- <td>{{ $user->name }}</td> --}}
                                 {{-- <td><a href="{{route('aqui')}}">{{ $user->name }}</a></td> --}}
 
