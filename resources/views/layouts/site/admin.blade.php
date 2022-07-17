@@ -48,7 +48,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{ url('/') }}">
+                <a class="nav-link" href="{{route('dashboard')}}">
                     <span style="font-size: 15px">Dashboard</span></a>
                 </li>
 

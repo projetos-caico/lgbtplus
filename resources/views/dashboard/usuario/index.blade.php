@@ -25,17 +25,22 @@
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Email</th>
-                        <th>Função</th>
-                        <th>Ações</th>
+                        {{-- <th>Função</th>
+                        <th>Ações</th> --}}
                     </thead>
                     <tbody>
 
                         @foreach ($usuarios as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
+                                {{-- <td>{{ $user->name }}</td> --}}
+                                {{-- <td><a href="{{route('aqui')}}">{{ $user->name }}</a></td> --}}
+
+                                <td><a href="{{route('usuarios.show', ['user=>$user->id'])}}">{{$user->name}}</a></td>
+
                                 <td>{{ $user->email }}</td>
-                                <td>{{$user->role}}</td>
+
+                                {{-- <td>{{$user->role}}</td> --}}
                                 {{-- @foreach ($roles as $role)
                                     <td>{{ $user->role }}</td>
                                 @endforeach --}}

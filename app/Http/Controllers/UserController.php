@@ -86,7 +86,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::all();
+
+        return view('dashboard.usuario.show', ['usuarios'=>$users, 'roles'=>null]);
+
+        // return view('dashboard.usuario.show');
     }
 
     /**
