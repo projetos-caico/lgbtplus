@@ -7,7 +7,7 @@
         </div>
         <div class="align-self-end ml-auto">
             <form action="{{ route('usuarios.create') }}">
-                <button type="submit" class="btn btn-outline-secondary mb-2"">Novo</button>
+                <button type="submit" class="btn btn-outline-secondary mb-2">Novo</button>
             </form>
         </div>
     </div>

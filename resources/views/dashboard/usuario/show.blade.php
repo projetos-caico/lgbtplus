@@ -2,15 +2,15 @@
 
 @section('main')
     <div class="d-flex h-100">
-        <div class="align-self-start mr-auto">
+        <div class="align-self-center mr-auto">
             <h2>Informações do usuário</h2>
         </div>
     </div>
     
-    <div class="card shadow mb-4">
-        <div class="card-body">
+    <div class="card shadow mb-4" style="width: 50%; td, th: text-align:center">
+        {{-- <div class="card-body"> --}}
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" whidth="100%">
+                <table class="table table-bordered text-align-center" id="dataTable" whidth="50%">
                     <tbody>
 
                         @foreach ($usuarios as $user)
@@ -19,31 +19,17 @@
                         <tr><td>Email: {{ $user->email }}</td></tr>
                         <tr><td>Função: {{$user->roles->first()->name}}</td></tr>
 
-                        {{-- <tr>
-                                <td>ID: {{ $user->id }}</td>
-                                {{-- <td>{{ $user->name }}</td> --}}
-                                {{-- <td><a href="{{route('aqui')}}">{{ $user->name }}</a></td> --
-
-                                <td>Nome: {{$user->name}}</td>
-
-                                <td>Email: {{ $user->email }}</td>
-
-                                {{-- <td>{{$user->role}}</td> --}}
-                                {{-- @foreach ($roles as $role)
-                                    <td>{{ $user->role }}</td>
-                                @endforeach --}
-                            </tr> --}}
                         @endforeach
 
                     </tbody>
                 </table>
             </div>
+            {{-- </div> --}}
         </div>
-    </div>
     <div class="align-self-end ml-auto">
-        <form action="">
+        {{-- <form action=""> --}}
             <button type="submit" class="btn btn-outline-secondary mb-2">Voltar</button>
-        </form>
+        {{-- </form> --}}
         
     </div>
 @endsection
