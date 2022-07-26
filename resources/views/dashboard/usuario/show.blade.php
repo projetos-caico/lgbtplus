@@ -12,24 +12,31 @@
             <div class="table-responsive">
                 <table class="table table-bordered text-align-center" id="dataTable" whidth="50%">
                     <tbody>
+                        {{-- @if ($user) --}}
 
-                        @foreach ($usuarios as $user)
-                        <tr><td>ID: {{ $user->id }}</td></tr>
-                        <tr><td>Nome: {{$user->name}}</td></tr>
-                        <tr><td>Email: {{ $user->email }}</td></tr>
-                        <tr><td>Função: {{$user->roles->first()->name}}</td></tr>
+                        {{-- id<tr>
+                            ID: <td>{{$user->id}}</td>
+                            
+                        </tr>
+                        nome<tr>
+                            Nome: <td>{{ $user->name }}</td>
+                            
+                        </tr>
+                        email<tr>
+                            Email: <td>{{ $user->email}}</td>
 
-                        @endforeach
-
+                        </tr> --}}
+                            
+                        {{-- @endif --}}
                     </tbody>
                 </table>
             </div>
             {{-- </div> --}}
         </div>
     <div class="align-self-end ml-auto">
-        {{-- <form action=""> --}}
+        <form action="{{route('usuarios.index')}}"> 
             <button type="submit" class="btn btn-outline-secondary mb-2">Voltar</button>
-        {{-- </form> --}}
+        </form>
         
     </div>
 @endsection

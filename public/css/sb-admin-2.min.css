@@ -242,9 +242,9 @@ td, th {
     padding: 8px;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
     background-color: #dddddd;
-  }
+  } */
 
 label {
     display: inline-block;
@@ -1663,7 +1663,7 @@ pre code {
 .table {
     width: 100%;
     margin-bottom: 1rem;
-    color: #858796
+    /* color: #858796 */
 }
 
 .table td, .table th {

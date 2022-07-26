@@ -23,7 +23,7 @@ Route::resource('/dashboard/usuarios', UserController::class)
 ->middleware('auth');
 
 
-Route::get('/mostrar', function () {
+Route::get('/mostrar', function ($id) {
     return view('dashboard.usuario.show');
 })->name('aqui');
 require __DIR__.'/auth.php';

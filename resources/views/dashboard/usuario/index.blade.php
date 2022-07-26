@@ -22,28 +22,20 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" whidth="100%">
                     <thead>
-                        {{-- <th>ID</th> --}}
-                        <th>Nome</th>
-                        <th>Email</th>
-                        {{-- <th>Função</th>
-                        <th>Ações</th> --}}
+                        {{-- <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Email</th> --}}
+                        <th scope="col">Nome</th>
+                        <th scope="col">Sobrenome</th>
+                        <th scope="col">Email</th>
                     </thead>
                     <tbody>
 
                         @foreach ($usuarios as $user)
                             <tr>
-                                {{-- <td>{{ $user->id }}</td> --}}
-                                {{-- <td>{{ $user->name }}</td> --}}
-                                {{-- <td><a href="{{route('aqui')}}">{{ $user->name }}</a></td> --}}
-
-                                <td><a href="{{route('usuarios.show', ['user=>$user->id'])}}">{{$user->name}}</a></td>
-
+                                <td><a href="{{route('usuarios.show', ['usuario'=>$user->id])}}">{{$user->name}}</a></td>
+                                <td>(opção a planejar)</td>
                                 <td>{{ $user->email }}</td>
-
-                                {{-- <td>{{$user->role}}</td> --}}
-                                {{-- @foreach ($roles as $role)
-                                    <td>{{ $user->role }}</td>
-                                @endforeach --}}
                             </tr>
                         @endforeach
 

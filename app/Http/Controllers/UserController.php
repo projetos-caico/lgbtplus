@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Models\User;
 
 
 class UserController extends Controller
@@ -30,7 +30,7 @@ class UserController extends Controller
     {
         $users = User::all();
 
-        return view('dashboard.usuario.index', ['usuarios'=>$users, 'roles'=>null]);
+        return view('dashboard.usuario.index', ['usuarios'=>$users]);
     }
 
     /**
@@ -73,7 +73,7 @@ class UserController extends Controller
         
         $user->assignRole($request->roles);
 
-
+        // $user->save();
         return redirect(route('usuarios.index'));
 
     }
@@ -86,25 +86,20 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $users = User::all();
-
-        return view('dashboard.usuario.show', ['usuarios'=>$users, 'roles'=>null]);
-
-        // return view('dashboard.usuario.show');
+        $users = User::find($id);
+        return view('dashboard.usuario.show', ['user'=>$users]); 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $$id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $users = User::all();
-        $admins = Admin::all();
-        
-        return view('dashboard.usuario.edit_user', ['admins'=>$admins, 'usuarios'=>$users]);
+            // $user = User::find($id);
+            // return view('', ['user'=>$user]);
     }
 
     /**
