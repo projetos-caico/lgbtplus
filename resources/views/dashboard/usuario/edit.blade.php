@@ -13,6 +13,13 @@
         </div>
 
         <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Sobrenome</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Sobrenome" value="{{$user->last_name}}">
+          </div>
+      </div>
+
+        <div class="form-group row">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
               <input type="email" class="form-control" name="email" id="email" placeholder="Email" value="{{$user->email}}">
@@ -24,9 +31,9 @@
             <div class="col-sm-10">
                 @foreach ($roles as $role)
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="role" id="{{$role->id}}" value="{{$role->id}}" @isset($user)
-                    @if (in_array($role->id, $user->roles->pluck('id')->toArray())) checked  
-                    @endif   
+                    <input class="form-check-input" type="radio" name="role" id="{{$role->id}}" value="{{$role->id}}" 
+                    @isset($user)
+                    @if (in_array($role->id, $user->roles->pluck('id')->toArray())) checked  @endif   
                     @endisset>
                         <label class="form-check-label text-capitalize" for="{{$role->name}}">
                             {{$role->name}}

@@ -41,7 +41,6 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::all();
-
         return view('dashboard.usuario.create', ['roles'=>$roles]);
     }
 
@@ -59,6 +58,7 @@ class UserController extends Controller
         
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            // 'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults(), 'min:8'],
             'roles' => ['required'],
@@ -66,6 +66,7 @@ class UserController extends Controller
 
         $user = User::create([
             'name' => $request->name,
+            // 'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -115,7 +116,7 @@ class UserController extends Controller
         $users = User::find($id);
         $users->name = $request->post('name');
         $users->email = $request->post('email');
-        $users->roles->first()->name = $request->post('role');
+        // $users->role = $request->post('role');
         $users->save(); //salva no banco 
 
         return redirect()->to(route('usuarios.index'));

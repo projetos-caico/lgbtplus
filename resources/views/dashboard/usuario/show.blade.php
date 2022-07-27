@@ -24,6 +24,9 @@
                             Nome: <td>{{ $user->name }}</td>
                             
                         </tr>
+                        <tr>
+                            Sobrenome: <td>{{$user->last_name}}</td>
+                        </tr>
                         email<tr>
                             Email: <td>{{ $user->email}}</td>
 
