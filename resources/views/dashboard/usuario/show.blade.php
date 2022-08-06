@@ -21,7 +21,7 @@
                             
                         </tr>
                         nome<tr>
-                            Nome: <td>{{ $user->name}}</td>
+                            Nome: <td>{{ $user->name }}</td>
                             
                         </tr>
                         <tr>
