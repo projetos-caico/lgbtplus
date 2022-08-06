@@ -34,7 +34,7 @@
                         @foreach ($usuarios as $user)
                             <tr>
                                 <td><a href="{{route('usuarios.show', ['usuario'=>$user->id])}}">{{$user->name}}</a></td>
-                                <td>{{$user->last_name}}</td>
+                                <td>{{$user->surname}}</td>
                                 <td>{{ $user->email }}</td>
                             </tr>
                         @endforeach

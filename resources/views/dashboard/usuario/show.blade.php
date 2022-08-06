@@ -21,11 +21,11 @@
                             
                         </tr>
                         nome<tr>
-                            Nome: <td>{{ $user->name }}</td>
+                            Nome: <td>{{ $user->name}}</td>
                             
                         </tr>
                         <tr>
-                            Sobrenome: <td>{{$user->last_name}}</td>
+                            Sobrenome: <td>{{$user->surname}}</td>
                         </tr>
                         email<tr>
                             Email: <td>{{ $user->email}}</td>
