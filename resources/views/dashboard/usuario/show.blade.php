@@ -3,44 +3,61 @@
 @section('main')
 <div class="d-flex h-100">
     <div class="align-self-center mr-auto">
-        <h2>Informações sobre: {{$user->name}}</h2>
+        <h2>Informações sobre {{$user->name}}</h2>
     </div>
     <form action="#"> 
         <button type="submit" class="btn btn-outline-secondary mb-2">Apagar</button>
     </form>
-    </div>
-    
-    <div class="card shadow mb-4" style="width: 100%; td, th: text-align:center">
-            <div class="table-responsive">
-                <table class="table table-bordered text-align-center" id="dataTable" whidth="50%">
-                    <tbody>
-                        {{-- @if ($user) --}}
-
-                        id<tr>
-                            ID: <td>{{$user->id}}</td>
-                            
-                        </tr>
-                        nome<tr>
-                            Nome: <td>{{ $user->name }}</td>
-                            
-                        </tr>
-                        <tr>
-                            Sobrenome: <td>{{$user->surname}}</td>
-                        </tr>
-                        email<tr>
-                            Email: <td>{{ $user->email}}</td>
-
-                        </tr>
-                        <tr>
-                            Função: <td>{{$user->roles->first()->name}}</td>
-                        </tr>
-                            
-                        {{-- @endif --}}
-                    </tbody>
-                </table>
-            </div>
+</div>
+<div class="col-md-8">
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Nome</h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{$user->name}}
+          </div>
         </div>
-        
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Sobrenome</h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{$user->surname}}
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Email</h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{$user->email}}
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Função</h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{$user->roles->first()->name}}
+          </div>
+        </div>
+        {{-- <hr> --}}
+        {{-- <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Address</h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            Bay Area, San Francisco, CA
+          </div>
+        </div> --}}
+        <hr>
+       
         <div class="btn-group">
             <form action="{{ route('usuarios.edit', ['usuario' => $user->id]) }}" method="GET">
                 <button class="btn btn-primary m-1">Editar</button>
@@ -49,5 +66,6 @@
                 <button class="btn btn-secondary m-1">Voltar</button>
             </form>
         </div>
-
+      </div>
+    </div>
 @endsection
