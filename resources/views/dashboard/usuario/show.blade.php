@@ -5,7 +5,9 @@
     <div class="align-self-center mr-auto m-3">
         <h2>Informações sobre {{$user->name}}</h2>
     </div>
-    <form action="#"> 
+    <form action="{{route('usuarios.destroy', $user)}}" method="POST"> 
+      @method('DELETE')
+      @csrf
         <button type="submit" class="btn btn-outline-secondary mb-2">Apagar</button>
     </form>
 </div>

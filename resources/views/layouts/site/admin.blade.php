@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    
     <title>Dashboard</title>
 
     <!-- Custom fonts for this template-->
@@ -24,11 +24,20 @@
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
     @yield('links')
-
+    
 </head>
 
 <body id="page-top">
-
+    
+    <main>
+        <div>
+            <div class="row">
+                @if (session('msg'))
+                    <p class="msg">{{session('msg')}}</p>
+                @endif
+            </div>
+        </div>
+    </main>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -53,6 +62,7 @@
                 </li>
 
             {{-- função + guard  para @role --}}
+            @role('Super admin')
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -69,6 +79,7 @@
                     </div>
                 </div>
             </li>
+            @endrole
             <!-- Divider -->
 
             <li class="nav-item">
@@ -87,6 +98,7 @@
 
 
             <!-- Nav Item - Charts -->
+            @can('Ver_email') 
             <li class="nav-item">
                 <a class="nav-link" href="https://mail.google.com/mail/u/0/" target="_blank">
                     <i class="fas fa-light fa-envelope"></i>
@@ -98,7 +110,8 @@
                     <i class="bi bi-bar-chart-line-fill"></i>
                     <span>Dados da pesquisa</span></a>
             </li>
-
+            @endcan
+            
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">

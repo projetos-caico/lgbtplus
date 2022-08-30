@@ -2465,6 +2465,26 @@ a.btn.disabled, fieldset:disabled a.btn {
     pointer-events: none
 }
 
+body::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--gray);  
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--gray);  
+}
+
+.msg {
+    background-color: #D4EDDA;
+    color: #155724;
+    border:  1px splid #C3E6C8;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding:10px;
+}
+
 .btn-primary {
     color: #fff;
     background-color:var(--bs-lgbt-purple);

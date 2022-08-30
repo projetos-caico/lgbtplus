@@ -75,7 +75,7 @@ class UserController extends Controller
         $user->assignRole($request->roles);
 
         $user->save();
-        return redirect(route('usuarios.index'));
+        return redirect(route('usuarios.index'))->with('msg', 'Criado com sucesso!');
 
     }
 
@@ -130,8 +130,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        User::where('id', $id)->delete();
+        // $request->session()->flash('message', 'apagou');
+        return redirect(route('usuarios.index'))->with('msg', 'Usuário deletado!');    
     }
 }
