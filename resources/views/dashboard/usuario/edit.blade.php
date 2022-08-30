@@ -2,7 +2,7 @@
 
 @section('main')
     <h2>Editar usuário</h2>
-    <form action="{{ route('usuarios.update', ['usuario'=>$user])}}" method="POST" >
+    <form action="{{ route('usuarios.update', ['usuario'=>$user->id])}}" method="POST" >
        @method('PUT')
        @csrf
         <div class="form-group row">

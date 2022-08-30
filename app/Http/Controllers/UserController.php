@@ -87,8 +87,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        // die();
+        $roles = Role::all();
         $users = User::find($id);
-        return view('dashboard.usuario.show', ['user'=>$users]); 
+        return view('dashboard.usuario.show', ['user'=>$users, 'role'=>$roles]); 
     }
 
     /**

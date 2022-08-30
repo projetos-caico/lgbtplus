@@ -44,7 +44,7 @@
             <h6 class="mb-0">Função</h6>
           </div>
           <div class="col-sm-9 text-secondary">
-            {{$user->roles->first()->name}}
+            {{-- {{$user->roles->first()->name}} --}}
           </div>
         </div>
         {{-- <hr> --}}
