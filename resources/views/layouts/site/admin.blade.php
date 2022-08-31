@@ -90,7 +90,7 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-gradient py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Todas as notícias</a>
+                        <a class="collapse-item" href="#">Minhas notícias</a>
                         <a class="collapse-item" href="#">Criar notícia</a>
                     </div>
                 </div>
@@ -105,11 +105,11 @@
                     <span>Gmail</span></a>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="bi bi-bar-chart-line-fill"></i>
                     <span>Dados da pesquisa</span></a>
-            </li>
+            </li> --}}
             @endcan
             
             <li class="nav-item">
@@ -155,7 +155,7 @@
                     </button>
                     
                     {{-- @yield('search-bar') --}}
-                    @include('layouts.site.search-bar')
+                    {{-- @include('layouts.site.search-bar') --}}
 
 
                     <!-- Topbar Navbar -->

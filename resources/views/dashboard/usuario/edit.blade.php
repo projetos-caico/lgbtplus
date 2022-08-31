@@ -31,7 +31,7 @@
             <div class="col-sm-10">
                 @foreach ($roles as $role)
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="role" id="{{$role->id}}" value="{{$role->id}}" 
+                    <input class="form-check-input" type="radio" name="role" id="{{$role->id}}" value="{{$role->name}}" 
                     @isset($user)
                     @if (in_array($role->id, $user->roles->pluck('id')->toArray())) checked  @endif   
                     @endisset>

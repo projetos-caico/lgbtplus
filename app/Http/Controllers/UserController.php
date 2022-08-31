@@ -115,11 +115,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $users = User::find($id);
         $users->name = $request->post('name');
         $users->email = $request->post('email');
-        $users->roles()->sync($request->roles);
+    
+        $users->syncRoles([$request->role]);
         $users->save(); //salva no banco 
+
+        
 
         return redirect()->to(route('usuarios.index'));
     }
