@@ -7,7 +7,7 @@
 <form class="login100-form validate-form" method="POST" action="{{url('/cadastro/admin')}}">
 	@csrf
 	<span class="login100-form-title p-b-2">
-        Cadastre-se   ADMIN
+        Cadastre-se 
     </span>
 
     @error('name')

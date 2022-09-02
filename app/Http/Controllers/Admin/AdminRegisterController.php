@@ -1,4 +1,4 @@
-<?php
+<?php /* 
 
 namespace App\Http\Controllers\Admin;
 
@@ -45,3 +45,4 @@ class AdminRegisterController extends Controller
         return redirect(RouteServiceProvider::ADMIN);
     }
 }
+*/
