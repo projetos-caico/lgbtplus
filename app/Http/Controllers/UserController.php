@@ -52,21 +52,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
-        // var_dump($request->all());
-        // die();
         
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],            
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults(), 'min:8'],
             'roles' => ['required'],
         ]);
 
         $user = User::create([
-            'name' => $request->name,
-            'surname' => $request->surname,
+            'name' => $request->name,            
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
