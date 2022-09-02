@@ -9,7 +9,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
     --blue: #4e73df;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -157,36 +157,42 @@ sub, sup {
     position: relative;
     font-size: 75%;
     line-height: 0;
-    vertical-align: baseline
+    vertical-align: baseline;
 }
 
 sub {
-    bottom: -.25em
+    bottom: -.25em;
 }
 
 sup {
-    top: -.5em
+    top: -.5em;
 }
 
 a {
-    color: #4e73df;
+    color: #101011;
     text-decoration: none;
-    background-color: transparent
+    background-color: transparent;
+    cursor: pointer;
 }
 
 a:hover {
-    color: #224abe;
-    text-decoration: underline
+    color: blue;
+    text-decoration: underline;
+}
+
+a.cx:hover{
+    color: #000;
+    text-decoration: none;
 }
 
 a:not([href]):not([class]) {
     color: inherit;
-    text-decoration: none
+    text-decoration: none;
 }
 
 a:not([href]):not([class]):hover {
     color: inherit;
-    text-decoration: none
+    text-decoration: none;
 }
 
 code, kbd, pre, samp {
@@ -216,7 +222,10 @@ svg {
 }
 
 table {
-    border-collapse: collapse
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color: black;
 }
 
 caption {
@@ -227,10 +236,15 @@ caption {
     caption-side: bottom
 }
 
-th {
-    text-align: inherit;
-    text-align: -webkit-match-parent
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
+
+/* tr:nth-child(even) {
+    background-color: #dddddd;
+  } */
 
 label {
     display: inline-block;
@@ -406,6 +420,10 @@ template {
     font-size: 3.5rem;
     font-weight: 300;
     line-height: 1.2
+}
+
+img .gmail{
+    color: #fff;
 }
 
 hr {
@@ -1645,7 +1663,7 @@ pre code {
 .table {
     width: 100%;
     margin-bottom: 1rem;
-    color: #858796
+    /* color: #858796 */
 }
 
 .table td, .table th {
@@ -2447,6 +2465,26 @@ a.btn.disabled, fieldset:disabled a.btn {
     pointer-events: none
 }
 
+body::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--gray);  
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--gray);  
+}
+
+.msg {
+    background-color: #D4EDDA;
+    color: #155724;
+    border:  1px splid #C3E6C8;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding:10px;
+}
+
 .btn-primary {
     color: #fff;
     background-color:var(--bs-lgbt-purple);
@@ -2758,14 +2796,15 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-    color: #858796;
-    border-color: #858796
+    color: #fff;
+    background-color: var(--bs-lgbt-coral);
+    border-color: var(--bs-lgbt-coral);
 }
 
 .btn-outline-secondary:hover {
     color: #fff;
-    background-color: #858796;
-    border-color: #858796
+    background-color: rgba(255, 31, 68, 0.815);
+    border-color: rgb(255, 31, 68, 0.815);
 }
 
 .btn-outline-secondary.focus, .btn-outline-secondary:focus {

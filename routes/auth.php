@@ -9,7 +9,8 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\AdminRegisterController;
+use App\Http\Controllers\Admin\AdminLoginController;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
@@ -64,21 +65,20 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
 
-//LROTAS ADMIN
-Route::get('/cadastro/admin', [AdminController::class, 'createAdmin'])
-                ->middleware('guest')
-                ->name('register-admin');
+//ROTAS ADMIN
+// Route::get('/cadastro/admin', [AdminRegisterController::class, 'create'])                
+//                 ->name('register-admin');
 
-Route::post('/cadastro/admin', [AdminController::class, 'storeRegister'])
-                ->middleware('guest');
+// Route::post('/cadastro/admin', [AdminRegisterController::class, 'store']);             
 
-Route::get('/login/admin', [AdminController::class, 'createLogin'])
-                ->middleware('guest')
-                ->name('login-admin');
 
-Route::post('/login/admin', [AdminController::class, 'storeLogin'])
-                ->middleware('guest');
+// Route::get('/login/admin', [AdminLoginController::class, 'create'])   
+//     ->middleware('guest')             
+//     ->name('admin.login');
 
-Route::post('/logout/admin', [AdminController::class, 'destroy'])
-                ->middleware('auth')
-                ->name('logout.admin');
+// Route::post('/login/admin', [AdminLoginController::class, 'store'])
+//     ->middleware('guest');
+                
+// Route::post('/logout/admin', [AdminLoginController::class, 'destroy'])
+//     ->middleware('auth:admin')                
+//     ->name('admin.logout');

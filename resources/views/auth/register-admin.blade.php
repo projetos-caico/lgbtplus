@@ -7,7 +7,7 @@
 <form class="login100-form validate-form" method="POST" action="{{url('/cadastro/admin')}}">
 	@csrf
 	<span class="login100-form-title p-b-2">
-        Cadastre-se   ADMIN
+        Cadastre-se 
     </span>
 
     @error('name')
@@ -27,16 +27,6 @@
         <input class="input100" type="email" name="email" id="email" placeholder="Insira seu email" required>
         <span class="focus-input100" data-symbol="&#xf206;"></span>
     </div>
-
-    {{-- <div class="wrap-input100 validate-input m-b-25" data-validate = "email is required">
-        <span class="label-input100">Número de cadastro</span>
-        <input class="input100" type="admin_number" name="admin_number" id="admin_number" placeholder="Nº de cadastro" required>
-        <span class="focus-input100" data-symbol="&#xf206;"></span>
-        @error('email')
-			<span class="alert alert-danger">{{$errors->first('email')}}</span>
-		@enderror
-    </div> --}}
-
 
     @error('password')
         {{$message}}

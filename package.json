@@ -21,6 +21,8 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
+        "@iconify/json": "^2.1.75",
+        "bootstrap-icons": "^1.8.3",
         "startbootstrap-modern-business": "^5.0.5",
         "startbootstrap-sb-admin-2": "^4.1.4"
     }

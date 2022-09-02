@@ -45,15 +45,15 @@
 		</div>
 	</div>
 	
-	<div class="flex-col-c p-t-75">
+	{{-- <div class="flex-col-c p-t-75"> --}}
 		{{-- espaçamento do cadastre-se aqui p-t-*55* --}}
-		<span class="txt1 p-b-17">
+		{{-- <span class="txt1 p-b-17">
 			Não tem conta?
 			<a href="{{route('register')}}" class="txt1">
 				Cadastre-se aqui.
 			</a>
 		</span> 
-	</div>
+	</div> --}}
 </form>
 </div>
 @endsection
