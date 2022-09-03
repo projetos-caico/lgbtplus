@@ -43,6 +43,7 @@
         </div>
 
     </div>
+    @if (Auth::user()->id == $user->id)
     <div class="form-group row">
       <label for="inputPassword3" class="col-sm-2 col-form-label">Senha</label>
       <div class="col-sm-10">
@@ -56,6 +57,7 @@
           <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirme a senha">
         </div>
       </div>
+    @endif
     
     <div class="form-group row">
         <div class="col-sm-10 align-self-center ml-auto mt-5">
