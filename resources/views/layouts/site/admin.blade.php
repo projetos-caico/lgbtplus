@@ -100,16 +100,17 @@
             <!-- Nav Item - Charts -->
             @can('Ver_email') 
             <li class="nav-item">
-                <a class="nav-link" href="{{route('list.email')}}">
+                <a class="nav-link collapsed" href="#" data-target="#collapseEmail" data-toggle="collapse"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-light fa-envelope"></i>
-                    <span>Email</span></a>
-            </li>
-
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-bar-chart-line-fill"></i>
-                    <span>Dados da pesquisa</span></a>
-            </li> --}}
+                    <span>Mensagens</span>
+                </a>
+                <div id="collapseEmail" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-gradient py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{route('list.email')}}">Caixa de Entrada</a>                        
+                    </div>
+                </div>                
+            </li>            
             @endcan
             
             <li class="nav-item">
