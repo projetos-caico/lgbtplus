@@ -100,9 +100,9 @@
             <!-- Nav Item - Charts -->
             @can('Ver_email') 
             <li class="nav-item">
-                <a class="nav-link" href="https://mail.google.com/mail/u/0/" target="_blank">
+                <a class="nav-link" href="{{route('list.email')}}">
                     <i class="fas fa-light fa-envelope"></i>
-                    <span>Gmail</span></a>
+                    <span>Email</span></a>
             </li>
 
             {{-- <li class="nav-item">
