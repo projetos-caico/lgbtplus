@@ -24,3 +24,5 @@ Route::resource('/dashboard/usuarios', UserController::class)
 
 require __DIR__.'/auth.php';
 require __DIR__.'/contact.php';
+
+Route::view('email', 'mail.message.reply');
