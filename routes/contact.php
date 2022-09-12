@@ -44,6 +44,6 @@ Route::get('/mail', function(){
 
     return view('site.mail.contact')->with([
         'name' => 'romerito',
-        'message' => $faker->words(200, true),
+        'message' => $faker->words(100, true),
     ]);
 });
