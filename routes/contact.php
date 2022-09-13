@@ -32,6 +32,9 @@ Route::group(['prefix'=>'dashboard', 'middleware'=>['auth']], function() {
     Route::get('/email/{message}/show', [MessageController::class, 'show'])
         ->name('see.email');
 
+    Route::post('/email/{message}/reply', [MessageController::class, 'reply'])
+        ->name('send.email');
+
 }); 
     
 

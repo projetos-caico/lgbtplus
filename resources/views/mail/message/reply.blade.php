@@ -39,22 +39,22 @@
             text-align: left;
             color: #000000;
             height: 20%;
-            background-color: #FFE6FD;
+            background-color: #9E3397;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
 
         .body-mail {
-            min-height: 55%;
+            min-height: 400px;
             height: auto;
-            background-color: white;
+            background-color: #FFE6FD;
         }
 
         .footer-mail {
             text-align: left;
             min-height: 25%;
             height: 25%;
-            background-color: white;
+            background-color: #9E3397;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;                      
         }
@@ -78,6 +78,11 @@
             text-justify: inter-word;
         }
 
+        hr.separator {            
+            margin: 10% 10% auto;
+            border: 0.5px dashed #9E3397;
+        }
+
     </style>
 
 </head>
@@ -94,11 +99,18 @@
             </div>
 
             <div class="body-mail">
-                <p class="body-text">Olá, {{$message->name}}.</p>
-                <p class="body-text">{{$message}}</p>
-                <p class="body-text">{{$message}}</p>
-                <p class="body-text">{{$message}}</p>
-                <p class="body-text">{{$message}}</p>
+                <p class="body-text">Olá, {{$name}}.</p>
+                
+                <p class="body-text">
+                    {{$answer}}                    
+                </p>
+
+                <hr class="separator">
+                
+                <p class="body-text">
+                    <em>{{$text}}</em>
+                </p>
+
             </div>
 
             <div class="footer-mail">

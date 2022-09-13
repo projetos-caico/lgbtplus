@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\MessageMail;
+use App\Mail\ReplyMessage;
 use App\Models\Message;
+use Illuminate\Support\Facades\Mail;
 
 class MessageController extends Controller
 {
@@ -34,8 +37,17 @@ class MessageController extends Controller
         return view('dashboard.message.show', ['message'=>$message]);
     }
 
-    public function reply(Request $request, Message $message) {
-        
+    public function reply(Request $request, Message $message) {        
+        //definir mensagem como respondida
+        $message->status = Message::RESPONDIDO;
+        //salvar mensagem
+        $text = $request->post('text');
+
+        Mail::to($message->email)
+            ->send(new ReplyMessage($message, $text));
+
+        return $text;
+
     }
 
 }

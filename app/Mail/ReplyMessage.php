@@ -25,13 +25,20 @@ class ReplyMessage extends Mailable
     public $msgObject;
 
     /**
+     * Response from admin to the client of the service
+     * 
+     */
+    public $answer;
+
+    /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Message $msgObject)
+    public function __construct(Message $msgObject, $answer)
     {
         $this->msgObject = $msgObject;
+        $this->answer = $answer;
     }
 
     /**
@@ -41,7 +48,14 @@ class ReplyMessage extends Mailable
      */
     public function build()
     {        
-        return $this->view('mail.message.reply');
+        return $this->from('lgbtrural@gmail.com')
+            ->to('romerito.campos@gmail.com')
+            ->view('mail.message.reply')
+            ->with([                
+                'name' => $this->msgObject->name,
+                'text' => $this->msgObject->message,
+                'answer' => $this->answer,
+            ]);
         
     }
 }
