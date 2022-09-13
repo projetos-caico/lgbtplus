@@ -32,12 +32,21 @@ class MessageController extends Controller
     }
     
     public function show (Request $request, Message $message) {
-        $message->status = Message::LIDO; //lida
-        $message->save();        
+
+        if (!$message->status == Message::RESPONDIDO){
+            $message->status = Message::LIDO; //lida 
+            $message->save();
+        }        
         return view('dashboard.message.show', ['message'=>$message]);
     }
 
     public function reply(Request $request, Message $message) {        
+
+        //validating data
+        $request->validate([
+            'text' => 'required',
+        ]);
+
         //definir mensagem como respondida
         $message->status = Message::RESPONDIDO;
         //salvar mensagem
@@ -46,7 +55,9 @@ class MessageController extends Controller
         Mail::to($message->email)
             ->send(new ReplyMessage($message, $text));
 
-        return $text;
+        $message->save();
+
+        return back();
 
     }
 

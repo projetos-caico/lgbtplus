@@ -30,9 +30,11 @@
       <div class="row justify-content-between align-items-center px-3">
         <p class="font-weight-light">{{$message->date()}}</p>
         <span>
-          <a class="btn-link" id="reply-button">
-            <i class="fas fa-reply fa-lg"></i>
-          </a>
+          @if ($message->status != \App\Models\Message::RESPONDIDO)
+            <a class="btn-link" id="reply-button">
+              <i class="fas fa-reply fa-lg"></i>
+            </a>    
+          @endif          
         </span>
       </div>
       

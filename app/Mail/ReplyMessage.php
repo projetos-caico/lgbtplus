@@ -48,8 +48,8 @@ class ReplyMessage extends Mailable
      */
     public function build()
     {        
-        return $this->from('lgbtrural@gmail.com')
-            ->to('romerito.campos@gmail.com')
+        return $this->from('lgbtrural@gmail.com', 'LGBT Rural')
+            ->subject('Resposta a sua mensagem')            
             ->view('mail.message.reply')
             ->with([                
                 'name' => $this->msgObject->name,

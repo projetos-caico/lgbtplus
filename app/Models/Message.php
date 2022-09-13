@@ -24,11 +24,13 @@ class Message extends Model
         switch ($this->status) {
             case self::NAOLIDO:
                 return "Não lido";
-                break;
+                break;                
             case self::LIDO:
                 return "Lido";
+                break;
             case self::RESPONDIDO:
                 return "Respondido";
+                break;
             default:
                 return "";
                 break;
