@@ -9796,6 +9796,11 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     color: #4e73df !important
 }
 
+.text-lgbt-purple {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-lgbt-purple-rgb), var(--bs-text-opacity)) !important;
+  }
+
 a.text-primary:focus, a.text-primary:hover {
     color: #224abe !important
 }

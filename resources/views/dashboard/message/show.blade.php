@@ -11,41 +11,47 @@
 
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">
-      Mensagem
+    <!-- Message Header -->
+    <h6 class="m-0">
+      <div class="row align-items-center">
+        <div class="col">         
+          <p style="margin: 0;">Nome: {{$message->name}}</p>
+          <p style="margin: 0;">Email: {{$message->email}}</p>
+        </div>
+        <div class="col-auto">
+          <span>
+            @if ($message->status != \App\Models\Message::RESPONDIDO)
+              <a class="btn-link" id="reply-button">
+                <i class="fas fa-reply fa-lg"></i>
+              </a>    
+            @endif          
+          </span>
+        </div>
+      </div>
     </h6>
   </div>
+
   <div class="card-body">         
-    
-    <div class="row justify-content-between align-items-center px-2">
-        <h5 class="card-title font-weight-light">Nome: <b>{{$message->name}}</b></h5>
-        <span class="badge badge-primary">{{$message->status()}}</span>
-    </div>
-    
-    <div class="row px-2">
-      <h6 class="card-subtitle font-weight-light">{{$message->email}}</h6>
-    </div>
-    <hr>
-    <div class="card-text">
-      <div class="row justify-content-between align-items-center px-3">
+        
+    <div class="card-text">      
+      <div class="row justify-content-end align-items-center px-3">
         <p class="font-weight-light">{{$message->date()}}</p>
-        <span>
-          @if ($message->status != \App\Models\Message::RESPONDIDO)
-            <a class="btn-link" id="reply-button">
-              <i class="fas fa-reply fa-lg"></i>
-            </a>    
-          @endif          
-        </span>
       </div>
-      
       <p>{{$message->message}}</p>
-
     </div>
-
     <hr>
+
+    @if ($message->status == \App\Models\Message::RESPONDIDO)
+    <div>
+      <p>Situação: <b class="text-lgbt-purple">{{$message->status()}}</b></p>
+    </div>
+    @else
     <div class="card-text">
       @include('dashboard.message.form')
-    </div>
+    </div>   
+    @endif
+
+    
     
   </div>
 </div>
