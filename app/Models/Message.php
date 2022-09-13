@@ -42,4 +42,15 @@ class Message extends Model
             ->locale('pt-BR')
             ->translatedFormat('d \de F Y');
     }
+
+    /**
+     * Get the user that owns the Message
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
 }

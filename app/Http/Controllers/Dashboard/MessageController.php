@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Mail\MessageMail;
 use App\Mail\ReplyMessage;
 use App\Models\Message;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
@@ -48,13 +48,15 @@ class MessageController extends Controller
         ]);
 
         //definir mensagem como respondida
-        $message->status = Message::RESPONDIDO;
-        //salvar mensagem
+        $message->status = Message::RESPONDIDO;        
         $text = $request->post('text');
 
         Mail::to($message->email)
             ->send(new ReplyMessage($message, $text));
 
+        //atualizar dados da mensagem no banco de dados
+        $message->awnser = $text;
+        $message->user_id = Auth::id();
         $message->save();
 
         return back();
