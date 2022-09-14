@@ -92,7 +92,7 @@
             <!-- cabeçalho -->
             <div class="head-mail">
                 <p class="logo">
-                    <a href="">
+                    <a href="http://lgbtrural.ca.ifrn.edu.br/">
                         LBGT<sup>+</sup> Rural
                     </a>                    
                 </p>
