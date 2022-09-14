@@ -17,11 +17,7 @@
             height: 100%;
             
         }
-        
-        body {
-            background-color: #86007D;            
-        }
-        
+
         .container {            
             margin: auto;
             display: block;                          
@@ -29,19 +25,18 @@
 
         .mail {
             display: block;                                  
-            margin-right: 15%;                    
-            margin-left: 15%;
-            margin-top: 5%;
-            border-radius: 10%;
+            margin-right: auto;                    
+            margin-left: auto;
+            margin-top: 1%;
+            max-width: 700px;            
         }
 
         .head-mail {
-            text-align: left;
+            text-align: left;            
             color: #000000;
-            height: 20%;
-            background-color: #9E3397;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            height: auto;
+            min-height: 150px;
+            background-color: #9E3397;           
         }
 
         .body-mail {
@@ -51,36 +46,41 @@
         }
 
         .footer-mail {
-            text-align: left;
-            min-height: 25%;
-            height: 25%;
-            background-color: #9E3397;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;                      
+            text-align: center;
+            min-height:15%;
+            height: 15%;
+            background-color: #9E3397;    
+            color: white;       
         }
 
         .logo {
             text-align: center;
             font-size: 40px;
-            font-family: Arial, Helvetica, sans-serif;            
-            /* margin: auto; */
-            top: 30%;            
-            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;                                               
         }
 
         .body-text {
             padding-left: 10%;
-            padding-right: 10%;
-            padding-top: 1em;
-            padding-bottom: 1em;
+            padding-right: 10%;           
             margin: 0;
             text-align: justify;
             text-justify: inter-word;
         }
+       
 
-        hr.separator {            
-            margin: 10% 10% auto;
-            border: 0.5px dashed #9E3397;
+        .separator {            
+            padding-left: 10%;
+            padding-right: 10%;
+            margin: 0;
+        }
+
+        a {
+            color: white;
+        }
+
+        a:link {
+            text-decoration: none;            
         }
 
     </style>
@@ -91,31 +91,34 @@
         <div class="mail">
             <!-- cabeçalho -->
             <div class="head-mail">
-                <div class="logo">
+                <p class="logo">
                     <a href="">
                         LBGT<sup>+</sup> Rural
                     </a>                    
-                </div>
+                </p>
             </div>
 
             <div class="body-mail">
-                <p class="body-text">Olá, {{$name}}.</p>
+                <p class="body-text" style="padding-top: 50px; padding-bottom: 60px">Olá, {{$name}}.</p>
                 
-                <p class="body-text">
+                <p class="body-text" style="padding-bottom: 30px;">
                     {{$answer}}                    
                 </p>
 
-                <hr class="separator">
+               <p class="separator" style="padding-bottom: 0px;">--------</p>
                 
-                <p class="body-text">
+                <p class="body-text" style="padding-top: 3px; padding-bottom: 60px">
                     <em>{{$text}}</em>
+                </p>
+
+                <p class="body-text" style="padding-bottom: 50px;">
+                    Atencionsamente, equipe Lgbt Rural.
                 </p>
 
             </div>
 
             <div class="footer-mail">
-                <p class="body-text">Best Regards</p>                                           
-                
+                <p style="padding: 2em;">Copyright © LGBT+ {{now()->year}}</p>                
             </div>
             
         </div>
