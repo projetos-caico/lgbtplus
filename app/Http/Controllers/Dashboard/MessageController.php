@@ -14,19 +14,21 @@ class MessageController extends Controller
 
     public function index (Request $request) {
 
-        $filter = $request->query('filter');
+        $filter = $request->query('filter');        
 
-        if ($filter) {
+        if (isset($filter)) {
             $messages = Message::where('status', '=', $filter)
                 ->orderBy('created_at','asc')
-                ->orderBy('status');
+                ->orderBy('status');            
         } else {
             $messages = Message::orderBy('created_at','asc')
                 ->orderBy('status');
         }
 
+        $messages = $messages->paginate(10);
+        $messages->appends(['filter'=>$filter]);
         return view('dashboard.message.index', [
-            "messages" => $messages->paginate(10),
+            "messages" => $messages,
         ]);
 
     }

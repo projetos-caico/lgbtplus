@@ -687,7 +687,7 @@
             <footer class="sticky-footer bg-gradient">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; LGBT+ 2021</span>
+                        <span>Copyright &copy; LGBT+ {{now()->year}}</span>
                     </div>
                 </div>
             </footer>
