@@ -16,16 +16,21 @@ class MessageController extends Controller
 
         $filter = $request->query('filter');        
 
+        //checks if a filter is passed in the query string
         if (isset($filter)) {
             $messages = Message::where('status', '=', $filter)
                 ->orderBy('created_at','asc')
                 ->orderBy('status');            
         } else {
+            //else it returns all messages from the messages box
             $messages = Message::orderBy('created_at','asc')
                 ->orderBy('status');
         }
 
+        //paginate the results with 10 pages per page
         $messages = $messages->paginate(10);
+
+        //add the current filter if it exists
         $messages->appends(['filter'=>$filter]);
         return view('dashboard.message.index', [
             "messages" => $messages,
