@@ -22,9 +22,7 @@ Route::post('/contato', [PublicMessageController::class, 'sendMail'])
 
 
 /** admin routes */
-
-
-Route::group(['prefix'=>'dashboard', 'middleware'=>['auth']], function() {    
+Route::group(['prefix'=>'dashboard', 'middleware'=>['auth', 'role:Admin|Super admin']], function() {    
 
     Route::get('/email', [MessageController::class, 'index'])
         ->name('list.email');
