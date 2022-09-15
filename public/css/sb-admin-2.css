@@ -9619,6 +9619,11 @@ button.bg-dark:focus {
   color: #4e73df !important;
 }
 
+.text-lgbt-purple {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-lgbt-purple-rgb), var(--bs-text-opacity)) !important;
+}
+
 a.text-primary:hover, a.text-primary:focus {
   color: #224abe !important;
 }

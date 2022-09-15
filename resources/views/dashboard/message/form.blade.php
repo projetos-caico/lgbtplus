@@ -1,4 +1,4 @@
-<form action="" method="POST" id="form" style="display: none;">
+<form action="{{route('send.email', ['message'=>$message->id])}}" method="POST" id="form" style="display: none;">
     @csrf
     <div class="form-group">
         <label for="reply">Resposta</label>

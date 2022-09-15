@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
 
@@ -44,11 +44,14 @@ class CreateAdminUser extends Command
         $email = $this->argument('email');
         $senha = $this->argument('senha');
 
-        $count = Admin::where('email', '=', $email)->count();
+        $count = User::where('email', '=', $email)->count();
 
         if ($count === 0) {
             $this->line('<fg=blue>Usuário em criação: '. $email);
-            $admin = Admin::make(['email'=>$email, 'senha'=>$senha]);
+            $admin = User::create([
+                'email'=>$email, 
+                'senha'=>$senha,
+            ])->assignRole('Super admin');;
             $admin->save();
 
             $this->line('<fg=blue>Email já utilizado: '. $email);

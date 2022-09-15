@@ -22,15 +22,16 @@ Route::post('/contato', [PublicMessageController::class, 'sendMail'])
 
 
 /** admin routes */
-
-
-Route::group(['prefix'=>'dashboard', 'middleware'=>['auth']], function() {    
+Route::group(['prefix'=>'dashboard', 'middleware'=>['auth', 'role:Admin|Super admin']], function() {    
 
     Route::get('/email', [MessageController::class, 'index'])
         ->name('list.email');
 
     Route::get('/email/{message}/show', [MessageController::class, 'show'])
         ->name('see.email');
+
+    Route::post('/email/{message}/reply', [MessageController::class, 'reply'])
+        ->name('send.email');
 
 }); 
     
@@ -44,6 +45,6 @@ Route::get('/mail', function(){
 
     return view('site.mail.contact')->with([
         'name' => 'romerito',
-        'message' => $faker->words(200, true),
+        'message' => $faker->words(100, true),
     ]);
 });

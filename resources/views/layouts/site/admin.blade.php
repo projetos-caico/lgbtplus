@@ -22,6 +22,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    
 
     @yield('links')
     
@@ -686,7 +687,7 @@
             <footer class="sticky-footer bg-gradient">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; LGBT+ 2021</span>
+                        <span>Copyright &copy; LGBT+ {{now()->year}}</span>
                     </div>
                 </div>
             </footer>

@@ -24,11 +24,13 @@ class Message extends Model
         switch ($this->status) {
             case self::NAOLIDO:
                 return "Não lido";
-                break;
+                break;                
             case self::LIDO:
                 return "Lido";
+                break;
             case self::RESPONDIDO:
                 return "Respondido";
+                break;
             default:
                 return "";
                 break;
@@ -40,4 +42,15 @@ class Message extends Model
             ->locale('pt-BR')
             ->translatedFormat('d \de F Y');
     }
+
+    /**
+     * Get the user that owns the Message
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
 }

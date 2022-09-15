@@ -24,3 +24,9 @@ Route::resource('/dashboard/usuarios', UserController::class)
 
 require __DIR__.'/auth.php';
 require __DIR__.'/contact.php';
+
+Route::view('email', 'mail.message.reply', [
+    'name' => 'Romerito Campos',
+    'answer' => 'longo text',
+    'text'=> 'Original Text'
+]);
