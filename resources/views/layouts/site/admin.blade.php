@@ -90,8 +90,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-gradient py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Minhas notícias</a>
-                        <a class="collapse-item" href="#">Criar notícia</a>
+                        <a class="collapse-item" href="{{ route ('noticias.index')}}">Minhas notícias</a>
+                        <a class="collapse-item" href="{{route ('noticias.create')}}">Criar notícia</a>
                     </div>
                 </div>
             </li>
@@ -713,7 +713,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form id="logout" action="{{ route('logout') }}" method="POST">
+                {{-- <form id="logout" action="{{ route('logout') }}" method="POST">
                     @csrf
                 </form>
                 <div class="modal-body">Selecione "sair" se você quiser encerrar a sessão.</div>
@@ -721,7 +721,7 @@
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                     <a class="btn btn-primary" onclick="document.getElementById('logout').submit(); return false;"
                         href="#">Sair</a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{route('site.homepage')}}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('site.sobre')}}">Sobre</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('site.contact')}}">Contato</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('dashboard')}}">Dashboard</a></li>
 
                 @yield('logout')
 

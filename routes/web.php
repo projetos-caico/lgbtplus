@@ -2,6 +2,7 @@
 
 Use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\NewsController;
 
 Route::get('/', function () {
     return view('site.homepage');
@@ -19,8 +20,11 @@ Route::get('/sobre', function () {
     return view('site.about');
 })->name('site.sobre');
 
-Route::resource('/dashboard/usuarios', UserController::class)
-->middleware('auth');
+Route::resource('/dashboard/usuarios', UserController::class);
+// ->middleware('auth');
+
+Route::resource('/dashboard/noticias', NewsController::class);
+// ->middleware('auth');
 
 
 // Route::get('/mostrar', function ($id) {
